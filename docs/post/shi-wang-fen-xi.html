@@ -84,24 +84,30 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/612756a0-a7ea-4df0-b82c-040fb3e05d0f"><img width="452" height="166" alt="Image" src="https://github.com/user-attachments/assets/612756a0-a7ea-4df0-b82c-040fb3e05d0f" style="max-width: 100%; height: auto; max-height: 166px;"></a></p>
 <h2>散射参数</h2>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7f92debe-ba69-4ca3-820a-0feb396b8353"><img width="438" height="241" alt="Image" src="https://github.com/user-attachments/assets/7f92debe-ba69-4ca3-820a-0feb396b8353" style="max-width: 100%; height: auto; max-height: 241px;"></a></p>
-S11 = b1/a1，端口2匹配时，端口1的反射系数；
-S22 = b2/a2，端口1匹配时，端口2的反射系数；
-S12 = b1/a2，端口1匹配时，端口2到端口1的反向传输系数；
-S21 = b2/a1，端口2匹配时，端口1到端口2的正向传输系数。
+<p>S11 = b1/a1，端口2匹配时，端口1的反射系数；</p>
+<p>S22 = b2/a2，端口1匹配时，端口2的反射系数；</p>
+<p>S12 = b1/a2，端口1匹配时，端口2到端口1的反向传输系数；</p>
+<p>S21 = b2/a1，端口2匹配时，端口1到端口2的正向传输系数。</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/76bc7402-95d9-4387-a2e1-55cec56b51da"><img width="885" height="247" alt="Image" src="https://github.com/user-attachments/assets/76bc7402-95d9-4387-a2e1-55cec56b51da" style="max-width: 100%; height: auto; max-height: 247px;"></a></p>
 <p>开路（一种常见的射频阻抗）在实数轴的无穷远处，无法在直角坐标图上直接显示。所以使用极坐标图来覆盖整个阻抗面。<br>
 在史密斯图上，恒定电阻的轨迹表现为圆，而恒定电抗的轨迹表现为圆弧。</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/45bc0e96-e44d-4098-806f-bcd625f1b313"><img width="224" height="204" alt="Image" src="https://github.com/user-attachments/assets/45bc0e96-e44d-4098-806f-bcd625f1b313" style="max-width: 100%; height: auto; max-height: 204px;"></a></p>
 <h2>散射参数测量术语</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/11868186-06c8-472b-a56e-1ed48b36ad6f"><img width="467" height="59" alt="Image" src="https://github.com/user-attachments/assets/11868186-06c8-472b-a56e-1ed48b36ad6f" style="max-width: 100%; height: auto; max-height: 59px;"></a></p>
 <h3>反射系数</h3>
 <p>$\Gamma = \frac{V_{\text{反射信号}}}{V_{\text{入射信号}}} = \frac{Z_L - Z_0}{Z_L + Z_0}$</p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/11868186-06c8-472b-a56e-1ed48b36ad6f"><img width="467" height="59" alt="Image" src="https://github.com/user-attachments/assets/11868186-06c8-472b-a56e-1ed48b36ad6f" style="max-width: 100%; height: auto; max-height: 59px;"></a></p>
 <h3>发射系数</h3>
 <p>$\Gamma = \frac{V_{\text{反射信号}}}{V_{\text{入射信号}}} = \frac{Z_L - Z_0}{Z_L + Z_0}$</p>
 <h3>插入损耗</h3>
 <p>插入损耗 (dB) = $-20 \log \left| \frac{V_{\text{Trans}}}{V_{\text{Inc}}} \right| = -20 \log \tau$</p>
 <h3>增益</h3>
-<p>增益 (dB) = $20 \log \left| \frac{V_{\text{Trans}}}{V_{\text{Inc}}} \right| = 20 \log \tau$</p></div>
+<p>增益 (dB) = $20 \log \left| \frac{V_{\text{Trans}}}{V_{\text{Inc}}} \right| = 20 \log \tau$</p>
+<h2>群延迟和相位参数</h2>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/6ec40151-c1f8-4153-82eb-6c12c3cf3bb3"><img width="172" height="135" alt="Image" src="https://github.com/user-attachments/assets/6ec40151-c1f8-4153-82eb-6c12c3cf3bb3" style="max-width: 100%; height: auto; max-height: 135px;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/945c6d3e-d576-4017-9588-66d860628440"><img width="174" height="145" alt="Image" src="https://github.com/user-attachments/assets/945c6d3e-d576-4017-9588-66d860628440" style="max-width: 100%; height: auto; max-height: 145px;"></a></p>
+<p>$$
+t_g = -\frac{d\phi}{d\omega} = -\frac{1}{360^\circ} \cdot \frac{d\phi}{df}
+$$</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
