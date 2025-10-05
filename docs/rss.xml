@@ -1,12 +1,55 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Sun, 05 Oct 2025 12:09:02 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>ADL5960集成矢量网络分析</title><link>https://DFC1234.github.io/blog.github.io/post/ADL5960-ji-cheng-shi-liang-wang-luo-fen-xi.html</link><description>&lt;img width='167' height='235' alt='Image' src='https://github.com/user-attachments/assets/a4c6bb15-41f4-4ce8-bd73-2c9166e8d919' /&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Sun, 05 Oct 2025 21:19:42 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>ADL5960集成矢量网络分析</title><link>https://DFC1234.github.io/blog.github.io/post/ADL5960-ji-cheng-shi-liang-wang-luo-fen-xi.html</link><description>&lt;img width='167' height='235' alt='Image' src='https://github.com/user-attachments/assets/a4c6bb15-41f4-4ce8-bd73-2c9166e8d919' /&gt;
 
 &lt;img width='237' height='348' alt='Image' src='https://github.com/user-attachments/assets/4f0a2057-ed3d-4591-8f3b-19475ba704a8' /&gt;
 
 ## 电桥部分
  。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/ADL5960-ji-cheng-shi-liang-wang-luo-fen-xi.html</guid><pubDate>Sun, 05 Oct 2025 12:08:31 +0000</pubDate></item><item><title>罗德施瓦茨ZVC 8Ghz</title><link>https://DFC1234.github.io/blog.github.io/post/luo-de-shi-wa-ci-ZVC%208Ghz.html</link><description>&lt;img width='423' height='238' alt='Image' src='https://github.com/user-attachments/assets/83992069-fda4-42f8-891a-732d1941749a' /&gt;。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/luo-de-shi-wa-ci-ZVC%208Ghz.html</guid><pubDate>Sun, 05 Oct 2025 11:29:20 +0000</pubDate></item><item><title>8753 定向电桥</title><link>https://DFC1234.github.io/blog.github.io/post/8753%20-ding-xiang-dian-qiao.html</link><description>&lt;img width='269' height='285' alt='Image' src='https://github.com/user-attachments/assets/bfc2e1f0-9a8b-4661-9c92-7f672f8bd275' /&gt;。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/8753%20-ding-xiang-dian-qiao.html</guid><pubDate>Sun, 05 Oct 2025 10:53:37 +0000</pubDate></item><item><title>5071电桥（电阻分压）</title><link>https://DFC1234.github.io/blog.github.io/post/5071-dian-qiao-%EF%BC%88-dian-zu-fen-ya-%EF%BC%89.html</link><description>&lt;img width='301' height='202' alt='Image' src='https://github.com/user-attachments/assets/d5049150-1d23-4342-9ff7-0249881baa61' /&gt;
 
-部分图来自BL老师 侵删。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/5071-dian-qiao-%EF%BC%88-dian-zu-fen-ya-%EF%BC%89.html</guid><pubDate>Sun, 05 Oct 2025 10:03:59 +0000</pubDate></item><item><title>矢量网络</title><link>https://DFC1234.github.io/blog.github.io/post/shi-liang-wang-luo.html</link><description># 使用矢网
+部分图来自BL老师 侵删
+
+&lt;img width='729' height='397' alt='Image' src='https://github.com/user-attachments/assets/fb6458a2-8cb0-48e5-ae3e-e52a0a07ba4f' /&gt;
+
+
+## 三种电阻功分及其定向
+
+&lt;img width='411' height='104' alt='Image' src='https://github.com/user-attachments/assets/75d92000-524a-484b-8fb1-eb16a4707f30' /&gt;
+
+### 1
+
+&lt;img width='244' height='191' alt='Image' src='https://github.com/user-attachments/assets/406fa8c1-2618-47e4-af64-465bfc491e3d' /&gt;
+
+#### 三端口（S11）
+
+&lt;img width='211' height='147' alt='Image' src='https://github.com/user-attachments/assets/d9468a6f-6047-4144-87d4-5c1ed5151282' /&gt;
+
+只有一端口50欧，匹配效果较好
+
+####  插损
+
+&lt;img width='223' height='149' alt='Image' src='https://github.com/user-attachments/assets/687c46fd-4e3c-4572-aa68-ee4949124576' /&gt;
+
+6dB左右
+
+#### 隔离度/定向性
+
+&lt;img width='246' height='142' alt='Image' src='https://github.com/user-attachments/assets/7948ca5a-f44c-4896-8b32-ef122517277a' /&gt;
+
+### 2,3
+
+无隔离度
+
+&lt;img width='577' height='192' alt='Image' src='https://github.com/user-attachments/assets/baff9ccb-3242-4868-8c3d-e690a5bdc0f5' /&gt;
+
+
+&lt;img width='705' height='329' alt='Image' src='https://github.com/user-attachments/assets/f458439b-61ed-4cf6-a529-94151db76ad4' /&gt;
+
+
+## 实物
+
+&lt;img width='415' height='361' alt='Image' src='https://github.com/user-attachments/assets/0b6c2bbd-e53a-4393-806e-765a7e7cc3e7' /&gt;
+
+从源输入到参考接收机， 通过被测器件反射流回到测量接收机 ，提供一定的定向性。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/5071-dian-qiao-%EF%BC%88-dian-zu-fen-ya-%EF%BC%89.html</guid><pubDate>Sun, 05 Oct 2025 10:03:59 +0000</pubDate></item><item><title>矢量网络</title><link>https://DFC1234.github.io/blog.github.io/post/shi-liang-wang-luo.html</link><description># 使用矢网
  
 “矢量”指幅度和相位，早期的标网只测量幅度。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/shi-liang-wang-luo.html</guid><pubDate>Fri, 03 Oct 2025 09:19:46 +0000</pubDate></item><item><title>调制解调</title><link>https://DFC1234.github.io/blog.github.io/post/diao-zhi-jie-diao.html</link><description>#  AM ASK解调
 
