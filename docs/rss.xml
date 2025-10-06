@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Sun, 05 Oct 2025 21:23:56 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>ADL5960集成矢量网络分析</title><link>https://DFC1234.github.io/blog.github.io/post/ADL5960-ji-cheng-shi-liang-wang-luo-fen-xi.html</link><description>&lt;img width='167' height='235' alt='Image' src='https://github.com/user-attachments/assets/a4c6bb15-41f4-4ce8-bd73-2c9166e8d919' /&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Mon, 06 Oct 2025 08:08:17 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>ADL5960集成矢量网络分析</title><link>https://DFC1234.github.io/blog.github.io/post/ADL5960-ji-cheng-shi-liang-wang-luo-fen-xi.html</link><description>&lt;img width='167' height='235' alt='Image' src='https://github.com/user-attachments/assets/a4c6bb15-41f4-4ce8-bd73-2c9166e8d919' /&gt;
 
 &lt;img width='237' height='348' alt='Image' src='https://github.com/user-attachments/assets/4f0a2057-ed3d-4591-8f3b-19475ba704a8' /&gt;
 
@@ -7,9 +7,33 @@
  。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/ADL5960-ji-cheng-shi-liang-wang-luo-fen-xi.html</guid><pubDate>Sun, 05 Oct 2025 12:08:31 +0000</pubDate></item><item><title>罗德施瓦茨ZVC 8Ghz</title><link>https://DFC1234.github.io/blog.github.io/post/luo-de-shi-wa-ci-ZVC%208Ghz.html</link><description>&lt;img width='423' height='238' alt='Image' src='https://github.com/user-attachments/assets/83992069-fda4-42f8-891a-732d1941749a' /&gt;。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/luo-de-shi-wa-ci-ZVC%208Ghz.html</guid><pubDate>Sun, 05 Oct 2025 11:29:20 +0000</pubDate></item><item><title>8753 定向电桥</title><link>https://DFC1234.github.io/blog.github.io/post/8753%20-ding-xiang-dian-qiao.html</link><description>## 50欧版本
 &lt;img width='269' height='285' alt='Image' src='https://github.com/user-attachments/assets/bfc2e1f0-9a8b-4661-9c92-7f672f8bd275' /&gt;
 
+ACP 7 接口
+
 ## 75欧版本
 
 &lt;img width='500' height='550' alt='Image' src='https://github.com/user-attachments/assets/53e205af-a570-4700-949a-d8608970adb1' /&gt;
+
+
+# 电桥总体推导
+
+### 电阻桥
+
+&lt;img width='844' height='542' alt='Image' src='https://github.com/user-attachments/assets/636ee852-0980-49c6-9649-3969785bd1b0' /&gt;
+
+ ###较现代
+
+&lt;img width='808' height='557' alt='Image' src='https://github.com/user-attachments/assets/b3658a96-73f3-4c7a-8ef2-5f65be5fbaab' /&gt;
+
+Rx作为待测  直接同轴出去
+B端口 巴伦相位幅度的匹配为主要问题
+
+
+&lt;img width='748' height='475' alt='Image' src='https://github.com/user-attachments/assets/76ee486c-64a5-4948-afbe-948db64d9084' /&gt;
+
+ 
+# 50欧版本
+
+
 
 
 
