@@ -79,7 +79,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>$$
 \sqrt{(10000 \times 1)^2 + (5)^2} = 50.99 , \text{mVrms}
 $$</p>
-<p>很显然，我们要极力规避这种情况出现。放大器过大的底噪将让我们的测量结果不可靠。</p></div>
+<p>很显然，我们要极力规避这种情况出现。放大器过大的底噪将让我们的测量结果不可靠。</p>
+<h2>20uVrms宽带噪声测量-AN83</h2>
+<p>LT1028是极低噪声高速运算放大器,使用2个LT1028单元构建了1000倍电压增益放大器，每级增益30多倍</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/f540f28a-0b28-4281-9665-3436969cd233"><img width="359" height="415" alt="Image" src="https://github.com/user-attachments/assets/f540f28a-0b28-4281-9665-3436969cd233" style="max-width: 100%; height: auto; max-height: 415px;"></a></p>
+<p>这个电路的设计目的是测量20uVrms的噪声，电路的本底噪声(Noise Floor)为4uVpp(0.5uVrms)，本底噪声贡献的测量误差不大，所以可以满足测量需求。</p>
+<p>$V_{\text{total}} = \text{噪声密度} \times \sqrt{\text{带宽}}$</p>
+<p>其中，噪声密度是 $3.16 , \text{nV}/\sqrt{\text{Hz}}$，带宽是 $1000 , \text{Hz}$（1kHz）。</p>
+<p>$V_{\text{total}} = 3.16 , \text{nV}/\sqrt{\text{Hz}} \times \sqrt{1000 , \text{Hz}} \approx 3.16 , \text{nV} \times 31.62 \approx 100 , \text{nV}$</p>
+<h3>0.8uVrms宽带噪声测量-AN159</h3>
+<p>要测量小于1uVrms的噪声是一项 挑战。<br>
+假设在10Hz到100kHz的频带内噪声是1uVrms，这等效为 3.16nV/√Hz 的噪声密度(假设为白噪声)，这个水平等效于一个 625Ω电阻 的热噪声！<br>
+要在这个电压水平下测量噪声并达到5%的精度,噪声放大器的输入噪声必须达到 1nV/√Hz 的水平。如果要达到1%的测量精度,噪声放大器的输入噪声甚至要达到 450pV/√Hz 的水平。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
