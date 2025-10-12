@@ -10,9 +10,23 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="">
+<meta name="description" content="# 快速边沿发生器使用指南  
+## ——帮助您快速准确测量示波器带宽
+
+---
+
+## 一、简介
+
+快速边沿发生器是一种专为测量示波器带宽而设计的高性能信号源。">
 <meta property="og:title" content="使用快速边沿发生器测量示波器带宽">
-<meta property="og:description" content="">
+<meta property="og:description" content="# 快速边沿发生器使用指南  
+## ——帮助您快速准确测量示波器带宽
+
+---
+
+## 一、简介
+
+快速边沿发生器是一种专为测量示波器带宽而设计的高性能信号源。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://DFC1234.github.io/blog.github.io/post/shi-yong-kuai-su-bian-yan-fa-sheng-qi-ce-liang-shi-bo-qi-dai-kuan.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/137273209?v=4">
@@ -73,7 +87,77 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"></div>
+<div class="markdown-body" id="postBody"><h1>快速边沿发生器使用指南</h1>
+<h2>——帮助您快速准确测量示波器带宽</h2>
+<hr>
+<h2>一、简介</h2>
+<p>快速边沿发生器是一种专为测量示波器带宽而设计的高性能信号源。<br>
+它能够输出上升沿极快、幅度稳定的方波脉冲信号，用于检验示波器的真实带宽。</p>
+<hr>
+<h2>二、测量原理简述</h2>
+<p>示波器的带宽与其对快速信号上升沿的响应密切相关。<br>
+当输入信号的上升时间非常短（远短于示波器的上升时间）时，测得的上升时间几乎完全由示波器自身带宽决定。</p>
+<p><strong>经验公式：</strong></p>
+<p>$$
+BW \approx \frac{0.35}{t_r}
+$$</p>
+<p>其中：</p>
+<ul>
+<li><strong>BW</strong> 为示波器的带宽（Hz）</li>
+<li><strong>t_r</strong> 为示波器测得的信号上升时间（秒）</li>
+</ul>
+<p>因此，只需使用快速边沿发生器输出一个上升沿足够陡峭的信号，测得波形的上升时间，就能推算示波器的有效带宽。</p>
+<hr>
+<h2>三、使用步骤</h2>
+<h3>1. 连接设备</h3>
+<ul>
+<li>确保示波器通道设置为 <strong>50Ω 终端匹配</strong>，以避免反射和波形畸变。</li>
+</ul>
+<h3>2. 设置示波器</h3>
+<ul>
+<li>将时基设置在 <strong>1ns/div 或更小</strong>（根据示波器带宽调整）。</li>
+<li>触发方式设置为“上升沿触发”，触发电平略低于信号幅度的中点。</li>
+</ul>
+<h3>3. 读取上升时间</h3>
+<ul>
+<li>使用示波器的“自动测量”功能，读取上升时间（10%→90% 或 20%→80%）。</li>
+<li>若示波器未提供自动测量，可手动测定波形上升部分的时间间隔。</li>
+</ul>
+<h3>5. 计算带宽</h3>
+<p>根据公式：</p>
+<p>$$
+BW \approx \frac{0.35}{t_r}
+$$</p>
+<p>计算出示波器的带宽。</p>
+<p><strong>示例：</strong><br>
+若测得上升时间为 700 ps，则示波器带宽约为：</p>
+<p>$$
+BW = \frac{0.35}{700 \times 10^{-12}} \approx 500,\text{MHz}
+$$</p>
+<hr>
+<h2>四、典型测量示例</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>测得上升时间</th>
+<th>推算带宽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 ns</td>
+<td>350 MHz</td>
+</tr>
+<tr>
+<td>500 ps</td>
+<td>700 MHz</td>
+</tr>
+<tr>
+<td>200 ps</td>
+<td>1.75 GHz</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -174,6 +258,6 @@ function iFrameLoading(){
 
 
 </script>
-<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script><script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </html>
