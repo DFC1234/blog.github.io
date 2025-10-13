@@ -10,13 +10,41 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="<img width='276' height='85' alt='Image' src='https://github.com/user-attachments/assets/cf8e17fa-613d-4daa-a515-56b0ccac9afe' />
+<meta name="description" content="### S参数
 
-*连接了源和负载的二端口网络*。">
+假设理想源端发出的波为正弦波，用矢量法可表示为   
+
+$$
+v_s(t) = \mathrm{Re} \left( |V_s| e^{j(\omega t + \phi)} \right)， \quad \text{或} \quad V_s = |V_s| e^{j(\omega t + \phi)}
+$$
+
+负载处的电压和电流分别为  
+
+$$
+V_L = |V_L| e^{j\phi_V}, \quad I_L = |I_L| e^{j\phi_I}
+$$
+
+<img width='275' height='114' alt='Image' src='https://github.com/user-attachments/assets/59e22c45-571d-40a4-9b54-5a95b0c14152' />
+
+__行波__ 是沿着传输线传输的信号，分为两类：前向和反向。">
 <meta property="og:title" content="微波器件测量">
-<meta property="og:description" content="<img width='276' height='85' alt='Image' src='https://github.com/user-attachments/assets/cf8e17fa-613d-4daa-a515-56b0ccac9afe' />
+<meta property="og:description" content="### S参数
 
-*连接了源和负载的二端口网络*。">
+假设理想源端发出的波为正弦波，用矢量法可表示为   
+
+$$
+v_s(t) = \mathrm{Re} \left( |V_s| e^{j(\omega t + \phi)} \right)， \quad \text{或} \quad V_s = |V_s| e^{j(\omega t + \phi)}
+$$
+
+负载处的电压和电流分别为  
+
+$$
+V_L = |V_L| e^{j\phi_V}, \quad I_L = |I_L| e^{j\phi_I}
+$$
+
+<img width='275' height='114' alt='Image' src='https://github.com/user-attachments/assets/59e22c45-571d-40a4-9b54-5a95b0c14152' />
+
+__行波__ 是沿着传输线传输的信号，分为两类：前向和反向。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://DFC1234.github.io/blog.github.io/post/wei-bo-qi-jian-ce-liang.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/137273209?v=4">
@@ -77,8 +105,45 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/cf8e17fa-613d-4daa-a515-56b0ccac9afe"><img width="276" height="85" alt="Image" src="https://github.com/user-attachments/assets/cf8e17fa-613d-4daa-a515-56b0ccac9afe" style="max-width: 100%; height: auto; max-height: 85px;"></a></p>
-<p><em>连接了源和负载的二端口网络</em></p></div>
+<div class="markdown-body" id="postBody"><h3>S参数</h3>
+<p>假设理想源端发出的波为正弦波，用矢量法可表示为</p>
+<p>$$
+v_s(t) = \mathrm{Re} \left( |V_s| e^{j(\omega t + \phi)} \right)， \quad \text{或} \quad V_s = |V_s| e^{j(\omega t + \phi)}
+$$</p>
+<p>负载处的电压和电流分别为</p>
+<p>$$
+V_L = |V_L| e^{j\phi_V}, \quad I_L = |I_L| e^{j\phi_I}
+$$</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/59e22c45-571d-40a4-9b54-5a95b0c14152"><img width="275" height="114" alt="Image" src="https://github.com/user-attachments/assets/59e22c45-571d-40a4-9b54-5a95b0c14152" style="max-width: 100%; height: auto; max-height: 114px;"></a></p>
+<p><strong>行波</strong> 是沿着传输线传输的信号，分为两类：前向和反向。</p>
+<p>假设传输线上任一点处的电压为 $V(z)$，电流为 $I(z)$。在参考点处，总电压为 $V(0)$，并且 $V(0) = V_1$；总电流为 $I(0)$。传输到负载的功率可以表示为</p>
+<p>$$
+P_L = P^F - P^R \quad
+$$</p>
+<p>其中 $P^F$ 称为前向电压， $P^R$  称为反向电压。如果用图 1.1 中的电压和电流来表示，那么端口处的总功率可以定义为流入端口的前向电压和流出端口的反向电压之和</p>
+<p>$$
+V_1 = V_F + V_R \quad
+$$</p>
+<p>前向的电压波指的是功率从源端流向负载方向，反向的电压波指的是功率从负载流向源的方向。对于一个正弦信号电压源，把电压用时间的函数来表示，即</p>
+<p>$$
+v_1(t) = V_1^p \cos(\omega t + \phi) = \mathrm{Re}\left( V_1^p e^{j(\omega t + \phi)} \right) \quad
+$$</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/cf8e17fa-613d-4daa-a515-56b0ccac9afe"><img width="276" height="85" alt="Image" src="https://github.com/user-attachments/assets/cf8e17fa-613d-4daa-a515-56b0ccac9afe" style="max-width: 100%; height: auto; max-height: 85px;"></a></p>
+<p><em>连接了源和负载的二端口网络</em></p>
+<p>负载  $Z_L$  不等于参考阻抗的情况下，此时 $a_1$ 和 $b_1$ 仍然存在，而当网络终端连接任意值负载时， $\Gamma_1$（也称为二端口网络的 $\Gamma_{in}$）变为<br>
+$\Gamma_1=\dfrac{b_1}{a_1}$<br>
+此时 $\Gamma_1$ 代表网络和端接负载整体的输入阻抗。这其中的区别在于：如果网络的输入和输出端接阻抗都是相对参考阻抗而言的，那么网络的 $S$ 参数是不随输入或者输出端接负载变化的；但是网络的输入阻抗却取决于其他各端口的端接阻抗。对于一个二端口的网络来说，可以直接根据 $S$ 参数和终端负载 $Z_L$ 来计算 $\Gamma_1$ 的值，其关系如下：</p>
+<p>$$
+\Gamma_1 = \left( S_{11} + \dfrac{S_{21}S_{12}\Gamma_L}{1 - S_{22}\Gamma_L} \right)
+$$</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/4c5eac9c-9507-4934-8884-7b4ca99e4312"><img width="178" height="97" alt="Image" src="https://github.com/user-attachments/assets/4c5eac9c-9507-4934-8884-7b4ca99e4312" style="max-width: 100%; height: auto; max-height: 97px;"></a></p>
+<p><em>一端口网络</em><br>
+$Z_L$ 为任意值， $Z_0$（源阻抗）为参考阻抗。<br>
+$V_1 = V_S \left( \dfrac{Z_L}{Z_L + Z_0} \right), \quad I_1 = V_S \left( \dfrac{1}{Z_L + Z_0} \right)$<br>
+$a_1 = \dfrac{V_S}{2\sqrt{Z_0}}, \quad b_1 = \dfrac{V_S}{2\sqrt{Z_0}} \left( \dfrac{Z_L - Z_0}{Z_L + Z_0} \right)$<br>
+$S_{11} = \dfrac{b_1}{a_1} = \dfrac{Z_L - Z_0}{Z_L + Z_0}$</p>
+<p>通常把 $S_{11}$ 当成网络的输入阻抗，其中<br>
+$Z_{in} = \dfrac{V_1}{I_1}$</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -179,6 +244,6 @@ function iFrameLoading(){
 
 
 </script>
-<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script><script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </html>
