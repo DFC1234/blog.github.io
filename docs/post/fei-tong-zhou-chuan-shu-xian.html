@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/137273209?v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 微带线
+
+微带线是最常用的平面传输线，这是一种平面结构传输线，多见于印制电路板和微电路。">
+<meta property="og:title" content="非同轴传输线">
+<meta property="og:description" content="# 微带线
+
+微带线是最常用的平面传输线，这是一种平面结构传输线，多见于印制电路板和微电路。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://DFC1234.github.io/blog.github.io/post/fei-tong-zhou-chuan-shu-xian.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/137273209?v=4">
+<title>非同轴传输线</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">非同轴传输线</h1>
+<div class="title-right">
+    <a href="https://DFC1234.github.io/blog.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/DFC1234/blog.github.io/issues/22" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>微带线</h1>
+<p>微带线是最常用的平面传输线，这是一种平面结构传输线，多见于印制电路板和微电路。微带线由介质基片之上的金属带状导线组成（介质基片将导线与接地面隔开），通常用来连接不同元器件以及制作传输线器件，例如耦合器和滤波器等。</p>
+<p>虽然从设计上来说这些微带线阻抗（或等效系统阻抗）可以是任何值，但从测量的角度看它们通常都是 50 Ω。</p>
+<p>大多数的应用中，介电常数为 10 或更小，所以对于 50 Ω 特征阻抗的微带线来说 $w/h$ 都要大于 1。<br>
+微带线的特征阻抗可以近似表示为：</p>
+<p>其中  $\varepsilon_{re}$  为有效相对介电常数：</p>
+<p>$$
+\varepsilon_{re} =
+\left( \dfrac{\varepsilon_r + 1}{2} \right)+ \left( \dfrac{\varepsilon_r - 1}{2} \right)
+\left( 1 + 12 \dfrac{h}{w} \right)^{-1/2}
+$$</p>
+<p>有效相对介电常数决定了传输线的速度因子，但对于微带线来说，有些场存在介质基片中传输，有些在空气中传输。<br>
+因此，传输的就不再是单纯的 TEM 模，这使得某些结构设计变得更复杂。<br>
+耦合线就是一个例子，其偶模和奇模速度因子不相等。<br>
+由于微带线传输的不是纯的 TEM 波，在高频时散射效应将会比较明显，可以发现微带线的有效延迟随频率的变化不是平坦的。</p>
+<p>由于微带线的损耗取决于很多因素，例如导线和“地”的导率、介质基片的介电损耗、外壳或屏蔽层的辐射损耗，以及表面和边缘处理粗糙导致的损耗（在 PCB 和一些低温共烧陶瓷的应用中可能非常大，并且取决于使用的特殊工艺）等。<br>
+因此要精确地计算微带线的损耗比较困难。<br>
+市面上不乏一些高质量的 PCB 材料（例如常见的 Duroid 或 GTEK 等）。<br>
+FR4 是最常见的板材料，其介电常数和 PCB 材料的损耗可能是不确定的。<br>
+基板的成品可能是多个基板材料层用胶水结合在一起的，最终的厚度取决于实际的处理步骤，<br>
+所以在评估微带线传输特性时最好做一些样品结构来帮助确定材料的特性。</p>
+<p>一种常用的高性能材料是蓝宝石单晶体，它的独特之处在于它的介电常数是有方向性的，<br>
+在三个维度中的一面具有较高的介电常数 10.4，而其他两面的介电常数相对较低，为 9.8。<br>
+另一种常见的高性能介电材料是陶瓷。多用于薄膜、厚膜和低温共烧陶瓷（LTCC）的应用中。<br>
+它的介电常数比较一致，依据纯度和晶粒陶瓷结构的不同通常在 9.6~9.8 之间。</p>
+<h4>1.8.3.2 其他准微带结构</h4>
+<p>对于一些应用来说，要连接到比较大的器件时，50 Ω 微带线的尺寸就不合适了。<br>
+悬置微带线是比较常见的一种变种。悬置微带线的接地面与介质之间有一定的距离，这样可以降低有效介电常数，提高微带线的阻抗。<br>
+于是就可以用比较宽的导线来连接一个比较宽的器件，同时还能保持阻抗匹配。<br>
+带有屏蔽壳的微带线是一种完全封闭的结构（微带线加金属屏蔽层），适用于低辐射和高隔离度的应用。</p>
+<h4>1.8.3.3 共面波导</h4>
+<p>微带传输线面临的一个问题是，“地”和信号在不同的层。<br>
+共面波导（CPW，coplanar waveguide），顾名思义，是一种“接地–信号–接地”的共面结构，如图 1.26(b) 所示。<br>
+还有一种是接地共面，其背面也是导体。<br>
+在实际应用中，所有的共面线都有其相应的“地”。<br>
+如果介质背板与“地”之间的空气间隙太大，“地”的作用可能就会失效。<br>
+参考文献 [8,9] 中给出了一些不同配置下共面波导的阻抗计算方法。</p>
+<p>微波测量中，在进行晶圆圆测量时经常用共面波导作为连接方式。<br>
+用来测量图 1.27 所示的微波晶体管和集成电路，这样可以保证接地电感足够低。<br>
+有时为正面接地 [参见图 1.27(a)]，有时为背面接地 [参见图 1.27(b)]。</p>
+<p>值得注意的是，由于阻抗取决于信号线宽与空气隙宽的比值，因此可以将连接从比较宽的信号线过渡到很小的器件（如 IC）上去。</p>
+<p>由于“地”位于表面或片上，共面波导本身也存在一些问题。<br>
+很多时候，CPW 传输线安装在金属封装的基片上，而接地面位于一侧的壁上。<br>
+如果在某频率上侧边的壁距离接地板边缘接近四分之一波长或其倍数，那么就形成某种传输线模式，导致 CPW 的“地”相对于封装的接地面来说相当于一个开路。<br>
+已经发现这种“热地”（hot ground）现象。</p>
+<p>为避免这种情况的发生，有时会在 CPW 的背面用一个较小的过孔或者交叉线将一边与另一边的“地”连接起来。<br>
+另一种方法是通过吸波材料或者薄膜材料连接到侧边来抑制不需要的模式能量。<br>
+还有一种方法是把共面波导用做接地板和导体之间空隙的悬浮床，然后用一些导线将 CPW 的“地”焊合到侧面的接地板。<br>
+由于增加了接地面，这种结构的特征阻抗将降低。<br>
+为了对多出的接地路径进行调整，通常要调节中心导线的宽度。</p>
+<h4>1.8.3.4 带状线</h4>
+<p>在 PCB 内层中更常见的传输线是带状线。<br>
+带状线由一个薄带或矩形金属夹在两个接地面之间，接地面之间为一种介电常数均匀的材料，如图 1.26(c) 所示。<br>
+带状线的阻抗比同样宽度的微带线低得多，但它的优点是全 TEM 波，<br>
+因此要设计类似耦合线这样的器件就简单得多，因为奇模模式速度因子与偶模模式速度因子相等。</p>
+<p>一个薄带厚度为零的带状线的阻抗计算公式为：</p>
+<p>$$
+Z_{\text{stripline}} = \dfrac{30\pi}{\sqrt{\varepsilon_r}} \cdot \dfrac{b}{W_e + 0.441b}
+$$</p>
+<p>其中有效带宽 $W_e$ 的计算公式为：</p>
+<p>$$
+W_e =
+\begin{cases}
+w, &amp; \dfrac{w}{b} &gt; 0.35 \[0.5em]
+w - (0.35 - \dfrac{w}{b})^2 \cdot b, &amp; \dfrac{w}{b} &lt; 0.35
+\end{cases}
+$$</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://DFC1234.github.io/blog.github.io">Gruidae'Blog</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("10/1/2025"!=""){
+    var startSite=new Date("10/1/2025");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","DFC1234/blog.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script><script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>
