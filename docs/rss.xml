@@ -1,5 +1,61 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Tue, 14 Oct 2025 04:52:38 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>非同轴传输线</title><link>https://DFC1234.github.io/blog.github.io/post/fei-tong-zhou-chuan-shu-xian.html</link><description># 微带线
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Wed, 22 Oct 2025 11:36:28 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>无线电考试</title><link>https://DFC1234.github.io/blog.github.io/post/wu-xian-dian-kao-shi.html</link><description>业余业务和卫星业余业务专用的频段   7 MHz、14 MHz、21 MHz、28 MHz、47 GHz
+
+业余业务和卫星业余业务与其他业务共用
+并且业余业务和卫星业余业务作为主要业务之一的 30 MHz 以下频段   1.8 MHz、3.5 MHz、14.25 MHz、18.068 MHz、24.89 MHz
+
+在 VHF 和 UHF 范围内分配给业余业务和卫星业余业务与其他业务共用
+并设业务类别为主要业务与次要业务
+以下那些频率分配给业余业务和卫星业余业务与其他业务共用
+并且业余业务和卫星业余业务作为主要业务  50 MHz、144 MHz
+
+业余业务和卫星业余业务与其他业务共用，  
+并且业余业务和卫星业余业务作为唯一主要业务的频段个数  
+以及在 3 GHz 以下的该类频段   3 个，144–146 MHz
+
+业余业务和卫星业余业务与其他业务共用，  
+并且业余业务和卫星业余业务作为次要业务的 1200 MHz 以下频段  135.7 kHz、5351.5 kHz、10.1 MHz、430 MHz
+
+业余业务和卫星业余业务的频率最高的频段及其共用类别别       248–250 GHz，唯一主要业务
+
+国际业余无线电界把 WARC-76 增加分配给业余业务和卫星业余业务的三个 HF 频段
+俗称为 WARC 频段        10.1–10.15 MHz、18.068–18.168 MHz、24.89–24.99 MHz
+
+40 米业余波段，其在 ITU 1、2、3 区的
+频率范围以及业余业务和卫星业余业务的使用状态分别为
+7.0–7.2 MHz、7.0–7.3 MHz、7.0–7.2 MHz，专用
+
+160 米业余波段
+频率范围以及业余业务和卫星业余业务的使用状态
+ 1800–2000 kHz，主要业务
+
+80 米业余波段
+频率范围以及业余业务和卫星业余业务
+3.5–3.9 MHz，主要业务
+
+20 米业余波段
+频率范围以及业余业务和卫星业余业务
+14–14.25 MHz 为专用，14.25–14.35 为主要业务
+
+15 米业余波段
+频率范围以及业余业务和卫星业余业务
+21–21.45 MHz，专用
+
+10 米业余波段
+频率范围以及业余业务和卫星业余业务
+28–29.7 MHz，专用
+
+6 米业余波段
+频率范围以及业余业务和卫星业余业务
+50–54 MHz，主要业务
+
+2 米业余波段
+频率范围以及我国业余业务和卫星业余业务
+144–148 MHz；其中 144–146 MHz 为唯一主要业务，146–148 MHz 为与其他业务共用作为主要业务
+
+
+
+。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/wu-xian-dian-kao-shi.html</guid><pubDate>Wed, 22 Oct 2025 11:35:56 +0000</pubDate></item><item><title>非同轴传输线</title><link>https://DFC1234.github.io/blog.github.io/post/fei-tong-zhou-chuan-shu-xian.html</link><description># 微带线
 
 微带线是最常用的平面传输线，这是一种平面结构传输线，多见于印制电路板和微电路。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/fei-tong-zhou-chuan-shu-xian.html</guid><pubDate>Tue, 14 Oct 2025 04:38:50 +0000</pubDate></item><item><title>各种射频连接器</title><link>https://DFC1234.github.io/blog.github.io/post/ge-zhong-she-pin-lian-jie-qi.html</link><description>&lt;img width='396' height='226' alt='Image' src='https://github.com/user-attachments/assets/fa98b62d-e570-4373-a9ae-0a7a0db71124' /&gt;
 
