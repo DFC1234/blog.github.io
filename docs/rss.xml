@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Fri, 24 Oct 2025 14:05:34 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>无线电考试</title><link>https://DFC1234.github.io/blog.github.io/post/wu-xian-dian-kao-shi.html</link><description>业余业务和卫星业余业务专用的频段   7 MHz、14 MHz、21 MHz、28 MHz、47 GHz
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Fri, 24 Oct 2025 14:15:04 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>无线电考试</title><link>https://DFC1234.github.io/blog.github.io/post/wu-xian-dian-kao-shi.html</link><description>业余业务和卫星业余业务专用的频段   7 MHz、14 MHz、21 MHz、28 MHz、47 GHz
 
 业余业务和卫星业余业务与其他业务共用
 并且业余业务和卫星业余业务作为主要业务之一的 30 MHz 以下频段   1.8 MHz、3.5 MHz、14.25 MHz、18.068 MHz、24.89 MHz
@@ -111,6 +111,55 @@ UHF（超高频）频段：300 MHz 至 3 GHz
 &lt;img width='535' height='186' alt='Image' src='https://github.com/user-attachments/assets/32d90d96-423d-46f4-8bf0-7dc00158399c' /&gt;
 
 &lt;img width='529' height='178' alt='Image' src='https://github.com/user-attachments/assets/40200dcd-f8db-4ded-877b-93d5619b44c7' /&gt;
+
+&lt;img width='518' height='178' alt='Image' src='https://github.com/user-attachments/assets/e4d3fc94-9653-4812-8aab-01e098bd84ab' /&gt;
+
+#  功率
+
+&lt;img width='478' height='125' alt='Image' src='https://github.com/user-attachments/assets/dda583bf-4252-423b-8b3d-a7a04ab480bd' /&gt;
+
+&lt;img width='522' height='137' alt='Image' src='https://github.com/user-attachments/assets/cb58184b-03ed-4662-9f3b-12b865e7ac33' /&gt;
+
+&lt;img width='518' height='135' alt='Image' src='https://github.com/user-attachments/assets/c757e64d-c76a-4019-9f02-62cb04fde611' /&gt;
+
+&lt;img width='522' height='148' alt='Image' src='https://github.com/user-attachments/assets/adfeb2a6-949d-4e26-aceb-16aa7d6c41bb' /&gt;
+
+&lt;img width='496' height='120' alt='Image' src='https://github.com/user-attachments/assets/b4bd8e73-de52-4636-8b99-1972660860c3' /&gt;
+
+&lt;img width='528' height='141' alt='Image' src='https://github.com/user-attachments/assets/72c20862-8e69-4643-ab09-43649900dcb1' /&gt;
+
+# 接收机抗拒邻近频率干扰
+
+&lt;img width='387' height='119' alt='Image' src='https://github.com/user-attachments/assets/57db74fb-fbf5-4bee-9901-65e6b249b12e' /&gt;
+
+&lt;img width='472' height='121' alt='Image' src='https://github.com/user-attachments/assets/582f9441-02fb-4e38-9a82-f695e7d3eb9b' /&gt;
+
+&lt;img width='474' height='118' alt='Image' src='https://github.com/user-attachments/assets/8e553457-d1cf-412f-8eb0-c98790bf061e' /&gt;
+
+&lt;img width='518' height='114' alt='Image' src='https://github.com/user-attachments/assets/f584cc8c-ff4c-4537-b9f3-114f84feeab7' /&gt;
+
+&lt;img width='535' height='139' alt='Image' src='https://github.com/user-attachments/assets/0315ba14-a1a5-44b5-a4a7-0ff2340e4b03' /&gt;
+
+# 灵敏度
+
+&lt;img width='439' height='113' alt='Image' src='https://github.com/user-attachments/assets/ff15dfd9-c49d-4e03-9321-92cbfced8438' /&gt;
+
+&lt;img width='407' height='40' alt='Image' src='https://github.com/user-attachments/assets/b5437610-22ef-4f82-b413-2980a67b1bdb' /&gt;
+
+&lt;img width='473' height='84' alt='Image' src='https://github.com/user-attachments/assets/78afa68a-0773-47b0-92a3-c4e5fbdb2938' /&gt;
+
+&lt;img width='494' height='119' alt='Image' src='https://github.com/user-attachments/assets/37bf6ae9-769b-4289-9e6c-1e0bdf2eab44' /&gt;
+
+&lt;img width='534' height='156' alt='Image' src='https://github.com/user-attachments/assets/0af80259-ab41-4af2-93c2-174bd1e50040' /&gt;
+
+&lt;img width='546' height='138' alt='Image' src='https://github.com/user-attachments/assets/24b2ac2e-85b4-42ed-a566-eb8ccabb7a95' /&gt;
+
+&lt;img width='519' height='61' alt='Image' src='https://github.com/user-attachments/assets/6b9b9407-3317-4bf3-8d7e-7c5d8bfd2b18' /&gt;
+
+&lt;img width='419' height='96' alt='Image' src='https://github.com/user-attachments/assets/b4d28a4d-de23-4ba4-a9c8-e9886f3b324f' /&gt;
+
+&lt;img width='516' height='134' alt='Image' src='https://github.com/user-attachments/assets/ce238c57-52ca-45e7-a92a-a595a73150d7' /&gt;
+
 
 
 
