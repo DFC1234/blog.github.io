@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Wed, 22 Oct 2025 11:36:28 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>无线电考试</title><link>https://DFC1234.github.io/blog.github.io/post/wu-xian-dian-kao-shi.html</link><description>业余业务和卫星业余业务专用的频段   7 MHz、14 MHz、21 MHz、28 MHz、47 GHz
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Fri, 24 Oct 2025 08:30:03 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>无线电考试</title><link>https://DFC1234.github.io/blog.github.io/post/wu-xian-dian-kao-shi.html</link><description>业余业务和卫星业余业务专用的频段   7 MHz、14 MHz、21 MHz、28 MHz、47 GHz
 
 业余业务和卫星业余业务与其他业务共用
 并且业余业务和卫星业余业务作为主要业务之一的 30 MHz 以下频段   1.8 MHz、3.5 MHz、14.25 MHz、18.068 MHz、24.89 MHz
@@ -52,6 +52,57 @@
 2 米业余波段
 频率范围以及我国业余业务和卫星业余业务
 144–148 MHz；其中 144–146 MHz 为唯一主要业务，146–148 MHz 为与其他业务共用作为主要业务
+
+
+HF（高频）频段：3 MHz 至 30 MHz
+
+UHF（超高频）频段：300 MHz 至 3 GHz
+
+# 流星余迹散射通信
+
+哪个波段最适合流星余迹散射通信？
+6 米
+
+&lt;img width='426' height='126' alt='Image' src='https://github.com/user-attachments/assets/2d839a29-7fc2-4ae4-a87b-ea53eaaf44bc' /&gt;
+
+
+
+
+
+现代接收机灵敏度在于机内噪声
+
+  
+
+
+# 计算噪声系数
+
+&lt;img width='567' height='165' alt='Image' src='https://github.com/user-attachments/assets/878434f0-846d-4762-b6dd-24e1d92a2de9' /&gt;
+
+&lt;img width='567' height='164' alt='Image' src='https://github.com/user-attachments/assets/18496838-3cd4-4d13-aaaa-7958ba6cb4f4' /&gt;
+
+# 组织机构 卫星
+
+&lt;img width='579' height='147' alt='Image' src='https://github.com/user-attachments/assets/68926a35-561d-45db-a6b5-510f3f2442b9' /&gt;
+
+&lt;img width='545' height='125' alt='Image' src='https://github.com/user-attachments/assets/6873043d-9eb4-46f0-9634-a925a275e73d' /&gt;
+
+&lt;img width='547' height='128' alt='Image' src='https://github.com/user-attachments/assets/87245fcc-f55b-41c8-ab3c-1c816309a479' /&gt;
+
+
+
+# 前放设置
+
+&lt;img width='545' height='129' alt='Image' src='https://github.com/user-attachments/assets/2b6716aa-c81f-40ff-99c5-4a1cfa74eff5' /&gt;
+
+&lt;img width='577' height='195' alt='Image' src='https://github.com/user-attachments/assets/dff6b032-c677-4336-bb9a-1b19cd141418' /&gt;
+
+
+
+
+
+
+
+
 
 
 
