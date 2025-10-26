@@ -6,4 +6,5 @@ https://www.oryoy.com/news/ubuntu-xi-tong-xia-qing-song-shang-shou-gnuradio-jie-
 
 防寄 贴个图
 
+windows11安装vmware虚拟机使用pluto网口时，需要禁用主机网口 vmware虚拟机才会正常识别到设备
 
