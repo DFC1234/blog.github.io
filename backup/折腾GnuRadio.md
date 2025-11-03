@@ -1,4 +1,4 @@
-https://www.oryoy.com/news/ubuntu-xi-tong-xia-qing-song-shang-shou-gnuradio-jie-suo-wu-xian-tong-xin-bian-cheng-xin-ji-neng.html
+ https://www.oryoy.com/news/ubuntu-xi-tong-xia-qing-song-shang-shou-gnuradio-jie-suo-wu-xian-tong-xin-bian-cheng-xin-ji-neng.html
 
 参考的文章  注意不要安装python3 新版已经包含了
 
@@ -8,4 +8,7 @@ https://www.oryoy.com/news/ubuntu-xi-tong-xia-qing-song-shang-shou-gnuradio-jie-
 
 # GNU Radio 系列教程（五）－－ 流和向量    
 
-使用流转换向量模块   把输出离散的点转换为整体的向量（一个块 来处理 传输）此时电脑要求很高 基本要满载。 可以设置多少个点一次转换
+使用流转换向量模块   把输出离散的点转换为整体的向量（一个块 来处理 传输）此时电脑要求很高 基本要满载。 可以设置多少个点一次转换    
+
+## 区分流和向量的区分点 
+ 流的模块颜色较浅 向量的比较深。
