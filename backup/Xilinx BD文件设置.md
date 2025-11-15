@@ -4,6 +4,14 @@
 
 <img width="550" height="380" alt="Image" src="https://github.com/user-attachments/assets/d1a56740-9009-4056-998d-ebecec484f0d" />
 
+继续弹出的对话框中，可以设置端口，现在什么都不做。里面的moudle自动和.v文件相同 后续要调用这个
+
+<img width="481" height="339" alt="Image" src="https://github.com/user-attachments/assets/5ba75a34-8beb-438b-a125-1963e593e1e1" />
+
+创建完成后可以看到 Design Source的新文件
+
+<img width="475" height="402" alt="Image" src="https://github.com/user-attachments/assets/d7d1024d-010e-44af-b828-8ed8a458ac3d" />
+
 
 
 
