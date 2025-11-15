@@ -30,7 +30,7 @@ assign O_led = 2'b0111; //assign赋值 O_led为后两位数字
 
 endmodule                     //结束模块
 1
-`
+
 
 > 流水灯实现
 
