@@ -82,12 +82,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </blockquote>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/0e5d6b54-4618-4dce-ba5f-2a8da081e789"><img width="1057" height="297" alt="Image" src="https://github.com/user-attachments/assets/0e5d6b54-4618-4dce-ba5f-2a8da081e789" style="max-width: 100%; height: auto; max-height: 297px;"></a></p>
 <p>fdma_wready = 1， fdma_wbusy=0 表示总线非忙，可以进行新的 FDMA 传输。</p>
-<p>使fdma_wreq=1，写入fdma burst 的起始地址和 fdma_wsize （需要传输的数据大小）。</p>
-<p>fdma_wvalid=1 ，给出有效的数据，写入 AXI 总线。</p>
-<p>当最后一个数传输完成后，fdma_wvalid 和fdma_wbusy = 0。</p>
+<p>使fdma_wreq=1，设置fdma burst 的起始地址和 fdma_wsize （需要传输的数据大小）。</p>
+<p>fdma_wvalid=1 ，给出待发送数据。</p>
+<p>最后一个数传输完成后，fdma_wvalid 和fdma_wbusy = 0。</p>
 <blockquote>
 <p>AXI4 最大的 burst lenth 是 256，封装后， fdma_size 可以任意大小，ip 自动控制每次Burst 长度，简化了 AXI4 总线的使用</p>
-</blockquote></div>
+</blockquote>
+<blockquote>
+<p>FDMA 的读时序</p>
+</blockquote>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/e32806dc-7d84-4a6f-8bdd-1f2c0e36c499"><img width="1097" height="291" alt="Image" src="https://github.com/user-attachments/assets/e32806dc-7d84-4a6f-8bdd-1f2c0e36c499" style="max-width: 100%; height: auto; max-height: 291px;"></a></p>
+<p>fdma_rready = 1， fdma_rbusy=0 时 FDMA 总线非忙，可以进行次新的 FDMA 传输。</p>
+<p>使fdma_rreq=1，设置fdma burst 的起始地址和 fdma_rsize （需要传输的数据大小）(以 bytes 为单位)。</p>
+<p>当 fdma_rvalid=1 ，给出待发送数据。</p>
+<p>最后一个数写完后，fdma_rvalid 和 fdma_rbusy = 0。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
