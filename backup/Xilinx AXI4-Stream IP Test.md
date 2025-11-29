@@ -209,5 +209,15 @@ endmodule
 
 ```
 
+>  Tcl Console 输入 reset_project 更新IP
+
+<img width="701" height="160" alt="Image" src="https://github.com/user-attachments/assets/47297007-0d7c-4c42-a35e-2b1d24519d47" />
+
+<img width="567" height="128" alt="Image" src="https://github.com/user-attachments/assets/8f0f226a-393a-44db-b39b-ce9787d9db37" />
+
+<img width="964" height="178" alt="Image" src="https://github.com/user-attachments/assets/d181e212-ffca-41c2-8e2e-ba4710b3d8da" />
+
+
+
 
 
