@@ -89,14 +89,22 @@ module maxis_v1_0_M00_AXIS #(
     
 );
 
-/*test*/
 
-
-    
-    // 内部定义常量   定义每次发送的数据包的长度
+    // 定义每次发送的数据包的长度
     localparam NUMBER_OF_OUTPUT_WORDS = 8;
 
-    // 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。">
+    //函数clogb2  计算 WAIT_COUNT_BITS值
+    function integer clogb2(input integer bit_depth);
+        begin
+            for (clogb2 = 0; bit_depth > 0; clogb2 = clogb2 + 1)
+                bit_depth = bit_depth >> 1;
+        end
+    endfunction
+
+    // WAIT_COUNT_BITS 等待计数器的位宽
+    localparam integer WAIT_COUNT_BITS = clogb2(C_M_START_COUNT - 1);
+
+    // bit_num 寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。">
 <meta property="og:title" content="Xilinx AXI4-Stream IP Test">
 <meta property="og:description" content="> 添加 IP
 
@@ -177,14 +185,22 @@ module maxis_v1_0_M00_AXIS #(
     
 );
 
-/*test*/
 
-
-    
-    // 内部定义常量   定义每次发送的数据包的长度
+    // 定义每次发送的数据包的长度
     localparam NUMBER_OF_OUTPUT_WORDS = 8;
 
-    // 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。">
+    //函数clogb2  计算 WAIT_COUNT_BITS值
+    function integer clogb2(input integer bit_depth);
+        begin
+            for (clogb2 = 0; bit_depth > 0; clogb2 = clogb2 + 1)
+                bit_depth = bit_depth >> 1;
+        end
+    endfunction
+
+    // WAIT_COUNT_BITS 等待计数器的位宽
+    localparam integer WAIT_COUNT_BITS = clogb2(C_M_START_COUNT - 1);
+
+    // bit_num 寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Stream%20IP%20Test.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/137273209?v=4">
@@ -331,14 +347,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     
 );
 
-<span class="pl-c">/*test*/</span>
 
-
-    
-    <span class="pl-c"><span class="pl-c">//</span> 内部定义常量   定义每次发送的数据包的长度</span>
+    <span class="pl-c"><span class="pl-c">//</span> 定义每次发送的数据包的长度</span>
     <span class="pl-k">localparam</span> NUMBER_OF_OUTPUT_WORDS <span class="pl-k">=</span> <span class="pl-c1">8</span>;
 
-    <span class="pl-c"><span class="pl-c">//</span> 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。</span>
+    <span class="pl-c"><span class="pl-c">//</span>函数clogb2  计算 WAIT_COUNT_BITS值</span>
     <span class="pl-k">function</span> <span class="pl-k">integer</span> clogb2(<span class="pl-k">input</span> <span class="pl-k">integer</span> bit_depth);
         <span class="pl-k">begin</span>
             <span class="pl-k">for</span> (clogb2 <span class="pl-k">=</span> <span class="pl-c1">0</span>; bit_depth <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>; clogb2 <span class="pl-k">=</span> clogb2 <span class="pl-k">+</span> <span class="pl-c1">1</span>)
@@ -346,17 +359,30 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         <span class="pl-k">end</span>
     <span class="pl-k">endfunction</span>
 
-    <span class="pl-c"><span class="pl-c">//</span> WAIT_COUNT_BITS 是等待计数器的位宽。</span>
+    <span class="pl-c"><span class="pl-c">//</span> WAIT_COUNT_BITS 等待计数器的位宽</span>
     <span class="pl-k">localparam</span> <span class="pl-k">integer</span> WAIT_COUNT_BITS <span class="pl-k">=</span> clogb2(C_M_START_COUNT <span class="pl-k">-</span> <span class="pl-c1">1</span>);
-    <span class="pl-c"><span class="pl-c">//</span> bit_num 给出了寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。</span>
+
+    <span class="pl-c"><span class="pl-c">//</span> bit_num 寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。</span>
     <span class="pl-k">localparam</span> bit_num <span class="pl-k">=</span> clogb2(NUMBER_OF_OUTPUT_WORDS);
 
 
  
-    <span class="pl-c"><span class="pl-c">//</span> 读指针 (用于生成输出数据)</span>
+    <span class="pl-c"><span class="pl-c">//</span> 读寄存器 (用于生成输出数据)</span>
     <span class="pl-k">reg</span> [bit_num<span class="pl-k">-</span><span class="pl-c1">1</span>:<span class="pl-c1">0</span>] read_pointer;
     <span class="pl-c"><span class="pl-c">//</span> 等待计数器。主设备在发起传输前会等待用户定义的时钟周期数。</span>
     <span class="pl-k">reg</span> [WAIT_COUNT_BITS<span class="pl-k">-</span><span class="pl-c1">1</span> : <span class="pl-c1">0</span>] count;
+
+ 
+    <span class="pl-k">always</span> @(<span class="pl-k">posedge</span> M_AXIS_ACLK) <span class="pl-k">begin</span>
+        <span class="pl-k">if</span> (<span class="pl-k">!</span>M_AXIS_ARESETN) <span class="pl-k">begin</span>
+            read_pointer <span class="pl-k">&lt;=</span> <span class="pl-c1">0</span>;
+        <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">if</span> (tx_en) <span class="pl-k">begin</span>
+            <span class="pl-c"><span class="pl-c">//</span> 仅当一次传输发生时，读指针才增加</span>
+            read_pointer <span class="pl-k">&lt;=</span> read_pointer <span class="pl-k">+</span> <span class="pl-c1">1</span>;
+        <span class="pl-k">end</span>
+    <span class="pl-k">end</span>
+
+
 
     <span class="pl-c"><span class="pl-c">//</span> AXI Stream 内部信号</span>
     <span class="pl-k">wire</span> axis_tvalid;
@@ -447,17 +473,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-c"><span class="pl-c">//</span> 当最后一次传输完成时，tx_done 置为有效。</span>
     <span class="pl-k">assign</span> tx_done <span class="pl-k">=</span> axis_tlast;
 
-    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
-    <span class="pl-c"><span class="pl-c">//</span> 读指针逻辑 (用于生成流式输出数据)</span>
-    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
-    <span class="pl-k">always</span> @(<span class="pl-k">posedge</span> M_AXIS_ACLK) <span class="pl-k">begin</span>
-        <span class="pl-k">if</span> (<span class="pl-k">!</span>M_AXIS_ARESETN) <span class="pl-k">begin</span>
-            read_pointer <span class="pl-k">&lt;=</span> <span class="pl-c1">0</span>;
-        <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">if</span> (tx_en) <span class="pl-k">begin</span>
-            <span class="pl-c"><span class="pl-c">//</span> 仅当一次传输发生时，读指针才增加</span>
-            read_pointer <span class="pl-k">&lt;=</span> read_pointer <span class="pl-k">+</span> <span class="pl-c1">1</span>;
-        <span class="pl-k">end</span>
-    <span class="pl-k">end</span>
+ 
 
 <span class="pl-k">endmodule</span>
 </pre></div></div>

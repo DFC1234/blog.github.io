@@ -77,14 +77,11 @@ module maxis_v1_0_M00_AXIS #(
     
 );
 
-/*test*/
 
-
-    
-    // 内部定义常量   定义每次发送的数据包的长度
+    // 定义每次发送的数据包的长度
     localparam NUMBER_OF_OUTPUT_WORDS = 8;
 
-    // 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。
+    //函数clogb2  计算 WAIT_COUNT_BITS值
     function integer clogb2(input integer bit_depth);
         begin
             for (clogb2 = 0; bit_depth > 0; clogb2 = clogb2 + 1)
@@ -92,17 +89,30 @@ module maxis_v1_0_M00_AXIS #(
         end
     endfunction
 
-    // WAIT_COUNT_BITS 是等待计数器的位宽。
+    // WAIT_COUNT_BITS 等待计数器的位宽
     localparam integer WAIT_COUNT_BITS = clogb2(C_M_START_COUNT - 1);
-    // bit_num 给出了寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。
+
+    // bit_num 寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。
     localparam bit_num = clogb2(NUMBER_OF_OUTPUT_WORDS);
 
 
  
-    // 读指针 (用于生成输出数据)
+    // 读寄存器 (用于生成输出数据)
     reg [bit_num-1:0] read_pointer;
     // 等待计数器。主设备在发起传输前会等待用户定义的时钟周期数。
     reg [WAIT_COUNT_BITS-1 : 0] count;
+
+ 
+    always @(posedge M_AXIS_ACLK) begin
+        if (!M_AXIS_ARESETN) begin
+            read_pointer <= 0;
+        end else if (tx_en) begin
+            // 仅当一次传输发生时，读指针才增加
+            read_pointer <= read_pointer + 1;
+        end
+    end
+
+
 
     // AXI Stream 内部信号
     wire axis_tvalid;
@@ -193,17 +203,7 @@ module maxis_v1_0_M00_AXIS #(
     // 当最后一次传输完成时，tx_done 置为有效。
     assign tx_done = axis_tlast;
 
-    //================================================================
-    // 读指针逻辑 (用于生成流式输出数据)
-    //================================================================
-    always @(posedge M_AXIS_ACLK) begin
-        if (!M_AXIS_ARESETN) begin
-            read_pointer <= 0;
-        end else if (tx_en) begin
-            // 仅当一次传输发生时，读指针才增加
-            read_pointer <= read_pointer + 1;
-        end
-    end
+ 
 
 endmodule
 

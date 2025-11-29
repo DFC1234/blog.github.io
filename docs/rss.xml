@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Sat, 29 Nov 2025 02:56:37 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>Xilinx AXI4-Stream IP Test</title><link>https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Stream%20IP%20Test.html</link><description>&gt; 添加 IP
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Sat, 29 Nov 2025 03:08:16 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>Xilinx AXI4-Stream IP Test</title><link>https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Stream%20IP%20Test.html</link><description>&gt; 添加 IP
 
 &lt;img width='508' height='130' alt='Image' src='https://github.com/user-attachments/assets/7474d678-ddb6-49d0-bd95-5040d6c56f95' /&gt;
 
@@ -78,14 +78,22 @@ module maxis_v1_0_M00_AXIS #(
     
 );
 
-/*test*/
 
-
-    
-    // 内部定义常量   定义每次发送的数据包的长度
+    // 定义每次发送的数据包的长度
     localparam NUMBER_OF_OUTPUT_WORDS = 8;
 
-    // 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Stream%20IP%20Test.html</guid><pubDate>Sat, 29 Nov 2025 00:58:40 +0000</pubDate></item><item><title>Xilinx AXI4-Lite-Slave IP Test</title><link>https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Lite-Slave%20IP%20Test.html</link><description>#  主要注意 
+    //函数clogb2  计算 WAIT_COUNT_BITS值
+    function integer clogb2(input integer bit_depth);
+        begin
+            for (clogb2 = 0; bit_depth &gt; 0; clogb2 = clogb2 + 1)
+                bit_depth = bit_depth &gt;&gt; 1;
+        end
+    endfunction
+
+    // WAIT_COUNT_BITS 等待计数器的位宽
+    localparam integer WAIT_COUNT_BITS = clogb2(C_M_START_COUNT - 1);
+
+    // bit_num 寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Stream%20IP%20Test.html</guid><pubDate>Sat, 29 Nov 2025 00:58:40 +0000</pubDate></item><item><title>Xilinx AXI4-Lite-Slave IP Test</title><link>https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Lite-Slave%20IP%20Test.html</link><description>#  主要注意 
 
    VALID ，REAADY 信号 同时为高时 ，数据有效 传输一次。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Lite-Slave%20IP%20Test.html</guid><pubDate>Thu, 27 Nov 2025 21:13:03 +0000</pubDate></item><item><title>信号完整性处理（陈增）</title><link>https://DFC1234.github.io/blog.github.io/post/xin-hao-wan-zheng-xing-chu-li-%EF%BC%88-chen-zeng-%EF%BC%89.html</link><description>&lt;img width='269' height='204' alt='Image' src='https://github.com/user-attachments/assets/09cf62f9-20d4-4921-944f-a3a57cfb934a' /&gt;
 
