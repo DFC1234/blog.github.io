@@ -30,7 +30,7 @@
 
 <img width='389' height='252' alt='Image' src='https://github.com/user-attachments/assets/3c3364a1-bd3f-4892-a55f-33fe9a5fed6c' />
 
-
+```verilog
 `timescale 1ns / 1ns
 
 module axis_top_sim();
@@ -59,7 +59,7 @@ module axis_top_sim();
 
 endmodule
 
-
+```
 
 
 
@@ -88,7 +88,7 @@ endmodule
 
 <img width='389' height='252' alt='Image' src='https://github.com/user-attachments/assets/3c3364a1-bd3f-4892-a55f-33fe9a5fed6c' />
 
-
+```verilog
 `timescale 1ns / 1ns
 
 module axis_top_sim();
@@ -117,7 +117,7 @@ module axis_top_sim();
 
 endmodule
 
-
+```
 
 
 
@@ -129,7 +129,7 @@ endmodule
 <meta property="og:url" content="https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Stream%20IP%20Test.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/137273209?v=4">
 <title>Xilinx AXI4-Stream IP Test</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -215,31 +215,34 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>自动创建顶层文件</p>
 </blockquote>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/3c3364a1-bd3f-4892-a55f-33fe9a5fed6c"><img width="389" height="252" alt="Image" src="https://github.com/user-attachments/assets/3c3364a1-bd3f-4892-a55f-33fe9a5fed6c" style="max-width: 100%; height: auto; max-height: 252px;"></a></p>
-<p>`timescale 1ns / 1ns</p>
-<p>module axis_top_sim();</p>
-<pre class="notranslate"><code class="notranslate">reg m00_axis_aclk_0;
-reg m00_axis_aresetn_0;
+<div class="highlight highlight-source-verilog"><pre class="notranslate"><span class="pl-k">`timescale</span> 1ns <span class="pl-k">/</span> 1ns
 
-system_wrappertem system_wrapper_inst (
-    .m00_axis_aclk_0    (m00_axis_aclk_0),
-    .m00_axis_aresetn_0 (m00_axis_aresetn_0)
-);
+<span class="pl-k">module</span> <span class="pl-en">axis_top_sim</span>();
 
-initial begin
-    m00_axis_aclk_0 = 1'b0;
-end
+    <span class="pl-k">reg</span> m00_axis_aclk_0;
+    <span class="pl-k">reg</span> m00_axis_aresetn_0;
 
-always begin
-    #5 m00_axis_aclk_0 = ~m00_axis_aclk_0;
-end
+    <span class="pl-ent">system_wrappertem</span> <span class="pl-ent">system_wrapper_inst</span> (
+        .m00_axis_aclk_0    (m00_axis_aclk_0),
+        .m00_axis_aresetn_0 (m00_axis_aresetn_0)
+    );
 
-initial begin
-    m00_axis_aresetn_0 = 1'b0;
-    #100;
-    m00_axis_aresetn_0 = 1'b1;
-end
-</code></pre>
-<p>endmodule</p></div>
+    <span class="pl-k">initial</span> <span class="pl-k">begin</span>
+        m00_axis_aclk_0 <span class="pl-k">=</span> <span class="pl-c1">1'b0</span>;
+    <span class="pl-k">end</span>
+
+    <span class="pl-k">always</span> <span class="pl-k">begin</span>
+        <span class="pl-c1">#5</span> m00_axis_aclk_0 <span class="pl-k">=</span> <span class="pl-k">~</span>m00_axis_aclk_0;
+    <span class="pl-k">end</span>
+
+    <span class="pl-k">initial</span> <span class="pl-k">begin</span>
+        m00_axis_aresetn_0 <span class="pl-k">=</span> <span class="pl-c1">1'b0</span>;
+        <span class="pl-c1">#100</span>;
+        m00_axis_aresetn_0 <span class="pl-k">=</span> <span class="pl-c1">1'b1</span>;
+    <span class="pl-k">end</span>
+
+<span class="pl-k">endmodule</span>
+</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>

@@ -18,7 +18,7 @@
 
 <img width="389" height="252" alt="Image" src="https://github.com/user-attachments/assets/3c3364a1-bd3f-4892-a55f-33fe9a5fed6c" />
 
-
+```verilog
 `timescale 1ns / 1ns
 
 module axis_top_sim();
@@ -47,7 +47,7 @@ module axis_top_sim();
 
 endmodule
 
-
+```
 
 
 
