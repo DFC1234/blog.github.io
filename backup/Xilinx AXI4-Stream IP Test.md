@@ -18,3 +18,39 @@
 
 <img width="389" height="252" alt="Image" src="https://github.com/user-attachments/assets/3c3364a1-bd3f-4892-a55f-33fe9a5fed6c" />
 
+
+`timescale 1ns / 1ns
+
+module axis_top_sim();
+
+    reg m00_axis_aclk_0;
+    reg m00_axis_aresetn_0;
+
+    system_wrappertem system_wrapper_inst (
+        .m00_axis_aclk_0    (m00_axis_aclk_0),
+        .m00_axis_aresetn_0 (m00_axis_aresetn_0)
+    );
+
+    initial begin
+        m00_axis_aclk_0 = 1'b0;
+    end
+
+    always begin
+        #5 m00_axis_aclk_0 = ~m00_axis_aclk_0;
+    end
+
+    initial begin
+        m00_axis_aresetn_0 = 1'b0;
+        #100;
+        m00_axis_aresetn_0 = 1'b1;
+    end
+
+endmodule
+
+
+
+
+
+
+
+
