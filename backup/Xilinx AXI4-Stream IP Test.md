@@ -121,39 +121,50 @@ module maxis_v1_0_M00_AXIS #(
     assign M_AXIS_TLAST  = axis_tlast;
     assign M_AXIS_TSTRB  = {(C_M_AXIS_TDATA_WIDTH/8){1'b1}}; // 所有字节选通始终有效
 
-    //================================================================
-    // 控制状态机实现 (Control state machine implementation)
-    //================================================================
-    always @(posedge M_AXIS_ACLK) begin
-        if (!M_AXIS_ARESETN) begin // 同步复位 (低电平有效)
-            mst_exec_state <= IDLE;
-            count          <= 0;
-        end else begin
-            case (mst_exec_state)
-                IDLE: begin
-                    mst_exec_state <= INIT_COUNTER;
+ 
+    // 控制状态机实现
+    // IDLE（空闲）、INIT_COUNTER（初始化计数器）、 SEND_STREAM（发送数据）
+
+    always @(posedge M_AXIS_ACLK) begin //每次上升沿开始
+        if (!M_AXIS_ARESETN) begin     //有复位信号
+
+            mst_exec_state <= IDLE;  // 状态切换到IDLE
+            count          <= 0;      //计数归零
+
+        end else begin    //不复位时的操作
+
+            case (mst_exec_state) //读mst_exec_state值 切换状态机
+                
+
+                //IDLE 空闲状态
+                IDLE: begin 
+                    mst_exec_state <= INIT_COUNTER;  //下一个时钟切换到INIT_COUNTER状态
                 end
 
-                INIT_COUNTER: begin
-                    // 等待直到计数器达到设定的起始计数值
-                    if (count == C_M_START_COUNT - 1) begin
-                        mst_exec_state <= SEND_STREAM;
-                    end else begin
-                        count          <= count + 1;
-                        mst_exec_state <= INIT_COUNTER;
+
+                //INIT_COUNTER  计数器延时状态
+                INIT_COUNTER: begin   
+                    if (count == C_M_START_COUNT - 1) begin   //计数满足延迟切换时间，切换到SEND_STREAM状态
+                        mst_exec_state <= SEND_STREAM; 
+                    end else begin //不满足条件 ，mst_exec_state计数+1
+                        count <= count + 1;   
+                        mst_exec_state <= INIT_COUNTER; //还是原来状态
                     end
                 end
 
-                SEND_STREAM: begin
-                    // 如果传输完成，则返回空闲状态
+
+                 //SEND_STREAM  发送数据状态
+                SEND_STREAM: begin  
                     if (tx_done) begin
                         mst_exec_state <= IDLE;
                     end else begin
                         mst_exec_state <= SEND_STREAM;
                     end
                 end
-
-                default: begin
+                  
+               
+                //其他状态
+                default: begin  
                     mst_exec_state <= IDLE;
                 end
             endcase

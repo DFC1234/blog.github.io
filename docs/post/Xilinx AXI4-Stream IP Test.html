@@ -369,39 +369,50 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-k">assign</span> M_AXIS_TLAST  <span class="pl-k">=</span> axis_tlast;
     <span class="pl-k">assign</span> M_AXIS_TSTRB  <span class="pl-k">=</span> {(C_M_AXIS_TDATA_WIDTH<span class="pl-k">/</span><span class="pl-c1">8</span>){<span class="pl-c1">1'b1</span>}}; <span class="pl-c"><span class="pl-c">//</span> 所有字节选通始终有效</span>
 
-    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
-    <span class="pl-c"><span class="pl-c">//</span> 控制状态机实现 (Control state machine implementation)</span>
-    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
-    <span class="pl-k">always</span> @(<span class="pl-k">posedge</span> M_AXIS_ACLK) <span class="pl-k">begin</span>
-        <span class="pl-k">if</span> (<span class="pl-k">!</span>M_AXIS_ARESETN) <span class="pl-k">begin</span> <span class="pl-c"><span class="pl-c">//</span> 同步复位 (低电平有效)</span>
-            mst_exec_state <span class="pl-k">&lt;=</span> IDLE;
-            count          <span class="pl-k">&lt;=</span> <span class="pl-c1">0</span>;
-        <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">begin</span>
-            <span class="pl-k">case</span> (mst_exec_state)
-                IDLE: <span class="pl-k">begin</span>
-                    mst_exec_state <span class="pl-k">&lt;=</span> INIT_COUNTER;
+ 
+    <span class="pl-c"><span class="pl-c">//</span> 控制状态机实现</span>
+    <span class="pl-c"><span class="pl-c">//</span> IDLE（空闲）、INIT_COUNTER（初始化计数器）、 SEND_STREAM（发送数据）</span>
+
+    <span class="pl-k">always</span> @(<span class="pl-k">posedge</span> M_AXIS_ACLK) <span class="pl-k">begin</span> <span class="pl-c"><span class="pl-c">//</span>每次上升沿开始</span>
+        <span class="pl-k">if</span> (<span class="pl-k">!</span>M_AXIS_ARESETN) <span class="pl-k">begin</span>     <span class="pl-c"><span class="pl-c">//</span>有复位信号</span>
+
+            mst_exec_state <span class="pl-k">&lt;=</span> IDLE;  <span class="pl-c"><span class="pl-c">//</span> 状态切换到IDLE</span>
+            count          <span class="pl-k">&lt;=</span> <span class="pl-c1">0</span>;      <span class="pl-c"><span class="pl-c">//</span>计数归零</span>
+
+        <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">begin</span>    <span class="pl-c"><span class="pl-c">//</span>不复位时的操作</span>
+
+            <span class="pl-k">case</span> (mst_exec_state) <span class="pl-c"><span class="pl-c">//</span>读mst_exec_state值 切换状态机</span>
+                
+
+                <span class="pl-c"><span class="pl-c">//</span>IDLE 空闲状态</span>
+                IDLE: <span class="pl-k">begin</span> 
+                    mst_exec_state <span class="pl-k">&lt;=</span> INIT_COUNTER;  <span class="pl-c"><span class="pl-c">//</span>下一个时钟切换到INIT_COUNTER状态</span>
                 <span class="pl-k">end</span>
 
-                INIT_COUNTER: <span class="pl-k">begin</span>
-                    <span class="pl-c"><span class="pl-c">//</span> 等待直到计数器达到设定的起始计数值</span>
-                    <span class="pl-k">if</span> (count <span class="pl-k">==</span> C_M_START_COUNT <span class="pl-k">-</span> <span class="pl-c1">1</span>) <span class="pl-k">begin</span>
-                        mst_exec_state <span class="pl-k">&lt;=</span> SEND_STREAM;
-                    <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">begin</span>
-                        count          <span class="pl-k">&lt;=</span> count <span class="pl-k">+</span> <span class="pl-c1">1</span>;
-                        mst_exec_state <span class="pl-k">&lt;=</span> INIT_COUNTER;
+
+                <span class="pl-c"><span class="pl-c">//</span>INIT_COUNTER  计数器延时状态</span>
+                INIT_COUNTER: <span class="pl-k">begin</span>   
+                    <span class="pl-k">if</span> (count <span class="pl-k">==</span> C_M_START_COUNT <span class="pl-k">-</span> <span class="pl-c1">1</span>) <span class="pl-k">begin</span>   <span class="pl-c"><span class="pl-c">//</span>计数满足延迟切换时间，切换到SEND_STREAM状态</span>
+                        mst_exec_state <span class="pl-k">&lt;=</span> SEND_STREAM; 
+                    <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">begin</span> <span class="pl-c"><span class="pl-c">//</span>不满足条件 ，mst_exec_state计数+1</span>
+                        count <span class="pl-k">&lt;=</span> count <span class="pl-k">+</span> <span class="pl-c1">1</span>;   
+                        mst_exec_state <span class="pl-k">&lt;=</span> INIT_COUNTER; <span class="pl-c"><span class="pl-c">//</span>还是原来状态</span>
                     <span class="pl-k">end</span>
                 <span class="pl-k">end</span>
 
-                SEND_STREAM: <span class="pl-k">begin</span>
-                    <span class="pl-c"><span class="pl-c">//</span> 如果传输完成，则返回空闲状态</span>
+
+                 <span class="pl-c"><span class="pl-c">//</span>SEND_STREAM  发送数据状态</span>
+                SEND_STREAM: <span class="pl-k">begin</span>  
                     <span class="pl-k">if</span> (tx_done) <span class="pl-k">begin</span>
                         mst_exec_state <span class="pl-k">&lt;=</span> IDLE;
                     <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">begin</span>
                         mst_exec_state <span class="pl-k">&lt;=</span> SEND_STREAM;
                     <span class="pl-k">end</span>
                 <span class="pl-k">end</span>
-
-                <span class="pl-k">default</span>: <span class="pl-k">begin</span>
+                  
+               
+                <span class="pl-c"><span class="pl-c">//</span>其他状态</span>
+                <span class="pl-k">default</span>: <span class="pl-k">begin</span>  
                     mst_exec_state <span class="pl-k">&lt;=</span> IDLE;
                 <span class="pl-k">end</span>
             <span class="pl-k">endcase</span>
