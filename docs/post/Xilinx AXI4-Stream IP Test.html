@@ -89,6 +89,9 @@ module maxis_v1_0_M00_AXIS #(
     
 );
 
+/*test*/
+
+
     
     // 内部定义常量   定义每次发送的数据包的长度
     localparam NUMBER_OF_OUTPUT_WORDS = 8;
@@ -173,6 +176,9 @@ module maxis_v1_0_M00_AXIS #(
     output wire M_AXIS_TLAST
     
 );
+
+/*test*/
+
 
     
     // 内部定义常量   定义每次发送的数据包的长度
@@ -325,6 +331,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     
 );
 
+<span class="pl-c">/*test*/</span>
+
+
     
     <span class="pl-c"><span class="pl-c">//</span> 内部定义常量   定义每次发送的数据包的长度</span>
     <span class="pl-k">localparam</span> NUMBER_OF_OUTPUT_WORDS <span class="pl-k">=</span> <span class="pl-c1">8</span>;
@@ -342,14 +351,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-c"><span class="pl-c">//</span> bit_num 给出了寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。</span>
     <span class="pl-k">localparam</span> bit_num <span class="pl-k">=</span> clogb2(NUMBER_OF_OUTPUT_WORDS);
 
-    <span class="pl-c"><span class="pl-c">//</span> 定义状态机的状态</span>
-    <span class="pl-k">parameter</span> [<span class="pl-c1">1</span>:<span class="pl-c1">0</span>] IDLE         <span class="pl-k">=</span> <span class="pl-c1">2'b00</span>, <span class="pl-c"><span class="pl-c">//</span> 初始/空闲状态</span>
-                    INIT_COUNTER <span class="pl-k">=</span> <span class="pl-c1">2'b01</span>, <span class="pl-c"><span class="pl-c">//</span> 初始化计数器状态</span>
-                    SEND_STREAM  <span class="pl-k">=</span> <span class="pl-c1">2'b10</span>; <span class="pl-c"><span class="pl-c">//</span> 发送流数据状态</span>
 
-
-    <span class="pl-c"><span class="pl-c">//</span> 状态机变量</span>
-    <span class="pl-k">reg</span> [<span class="pl-c1">1</span>:<span class="pl-c1">0</span>] mst_exec_state;
+ 
     <span class="pl-c"><span class="pl-c">//</span> 读指针 (用于生成输出数据)</span>
     <span class="pl-k">reg</span> [bit_num<span class="pl-k">-</span><span class="pl-c1">1</span>:<span class="pl-c1">0</span>] read_pointer;
     <span class="pl-c"><span class="pl-c">//</span> 等待计数器。主设备在发起传输前会等待用户定义的时钟周期数。</span>
@@ -369,6 +372,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-k">assign</span> M_AXIS_TLAST  <span class="pl-k">=</span> axis_tlast;
     <span class="pl-k">assign</span> M_AXIS_TSTRB  <span class="pl-k">=</span> {(C_M_AXIS_TDATA_WIDTH<span class="pl-k">/</span><span class="pl-c1">8</span>){<span class="pl-c1">1'b1</span>}}; <span class="pl-c"><span class="pl-c">//</span> 所有字节选通始终有效</span>
 
+
+
+
+
+    <span class="pl-c"><span class="pl-c">//</span> 定义状态机的状态</span>
+    <span class="pl-k">parameter</span> [<span class="pl-c1">1</span>:<span class="pl-c1">0</span>] IDLE         <span class="pl-k">=</span> <span class="pl-c1">2'b00</span>, <span class="pl-c"><span class="pl-c">//</span> 初始/空闲状态</span>
+                    INIT_COUNTER <span class="pl-k">=</span> <span class="pl-c1">2'b01</span>, <span class="pl-c"><span class="pl-c">//</span> 初始化计数器状态</span>
+                    SEND_STREAM  <span class="pl-k">=</span> <span class="pl-c1">2'b10</span>; <span class="pl-c"><span class="pl-c">//</span> 发送流数据状态</span>
+
+   <span class="pl-c"><span class="pl-c">//</span> 状态机变量</span>
+    <span class="pl-k">reg</span> [<span class="pl-c1">1</span>:<span class="pl-c1">0</span>] mst_exec_state;
  
     <span class="pl-c"><span class="pl-c">//</span> 控制状态机实现</span>
     <span class="pl-c"><span class="pl-c">//</span> IDLE（空闲）、INIT_COUNTER（初始化计数器）、 SEND_STREAM（发送数据）</span>

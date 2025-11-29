@@ -77,6 +77,9 @@ module maxis_v1_0_M00_AXIS #(
     
 );
 
+/*test*/
+
+
     
     // 内部定义常量   定义每次发送的数据包的长度
     localparam NUMBER_OF_OUTPUT_WORDS = 8;
@@ -94,14 +97,8 @@ module maxis_v1_0_M00_AXIS #(
     // bit_num 给出了寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。
     localparam bit_num = clogb2(NUMBER_OF_OUTPUT_WORDS);
 
-    // 定义状态机的状态
-    parameter [1:0] IDLE         = 2'b00, // 初始/空闲状态
-                    INIT_COUNTER = 2'b01, // 初始化计数器状态
-                    SEND_STREAM  = 2'b10; // 发送流数据状态
 
-
-    // 状态机变量
-    reg [1:0] mst_exec_state;
+ 
     // 读指针 (用于生成输出数据)
     reg [bit_num-1:0] read_pointer;
     // 等待计数器。主设备在发起传输前会等待用户定义的时钟周期数。
@@ -121,6 +118,17 @@ module maxis_v1_0_M00_AXIS #(
     assign M_AXIS_TLAST  = axis_tlast;
     assign M_AXIS_TSTRB  = {(C_M_AXIS_TDATA_WIDTH/8){1'b1}}; // 所有字节选通始终有效
 
+
+
+
+
+    // 定义状态机的状态
+    parameter [1:0] IDLE         = 2'b00, // 初始/空闲状态
+                    INIT_COUNTER = 2'b01, // 初始化计数器状态
+                    SEND_STREAM  = 2'b10; // 发送流数据状态
+
+   // 状态机变量
+    reg [1:0] mst_exec_state;
  
     // 控制状态机实现
     // IDLE（空闲）、INIT_COUNTER（初始化计数器）、 SEND_STREAM（发送数据）
