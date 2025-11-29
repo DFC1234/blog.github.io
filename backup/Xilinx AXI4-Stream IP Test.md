@@ -18,30 +18,32 @@
 
 <img width="389" height="252" alt="Image" src="https://github.com/user-attachments/assets/3c3364a1-bd3f-4892-a55f-33fe9a5fed6c" />
 
+> 仿真文件
+
 ```verilog
 `timescale 1ns / 1ns
 
-module axis_top_sim();
+module axis_top_sim();                                                //可随便定义仿真模块名字
 
-    reg m00_axis_aclk_0;
-    reg m00_axis_aresetn_0;
+    reg m00_axis_aclk_0;                                               //定义寄存器驱动时钟
+    reg m00_axis_aresetn_0;                                         //定义寄存器驱动复位信号
 
-    system_wrappertem system_wrapper_inst (
+    initial begin                                                                //定义时钟信号初始值
+        m00_axis_aclk_0 = 1'b0;
+    end
+
+    always begin                                                              //产生时钟信号  5个周期反转一次
+        #5 m00_axis_aclk_0 = ~m00_axis_aclk_0;
+    end
+
+    system_wrappertem system_wrapper_inst (          //例化自动生成的HDL文件
         .m00_axis_aclk_0    (m00_axis_aclk_0),
         .m00_axis_aresetn_0 (m00_axis_aresetn_0)
     );
 
     initial begin
-        m00_axis_aclk_0 = 1'b0;
-    end
-
-    always begin
-        #5 m00_axis_aclk_0 = ~m00_axis_aclk_0;
-    end
-
-    initial begin
-        m00_axis_aresetn_0 = 1'b0;
-        #100;
+        m00_axis_aresetn_0 = 1'b0;                               //仿真开始时，复位
+        #100;                                                                     //100个周期后，消除复位信号
         m00_axis_aresetn_0 = 1'b1;
     end
 
