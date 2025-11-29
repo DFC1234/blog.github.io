@@ -51,8 +51,144 @@ endmodule
 
 ```
 
+> AXI Master替换代码
 
 
+```verilog
+`timescale 1 ns / 1 ps
+
+module maxis_v1_0_M00_AXIS #(
+    // 定义DATA位宽
+    parameter integer C_M_AXIS_TDATA_WIDTH = 32,
+    // 在 INIT_COUNTER 状态下 等待多长时间开始尝试第一次发送数据
+    parameter integer C_M_START_COUNT      = 32
+) (
+    // 时钟 复位
+    input wire M_AXIS_ACLK,
+    input wire M_AXIS_ARESETN,
+
+    // AXI-S信号
+    output wire M_AXIS_TVALID,
+    input wire M_AXIS_TREADY，
+
+    output wire [C_M_AXIS_TDATA_WIDTH-1 : 0] M_AXIS_TDATA,
+    output wire [(C_M_AXIS_TDATA_WIDTH/8)-1 : 0] M_AXIS_TSTRB,
+    output wire M_AXIS_TLAST
+    
+);
+
+    
+    // 内部定义常量   定义每次发送的数据包的长度
+    localparam NUMBER_OF_OUTPUT_WORDS = 8;
+
+    // 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。
+    function integer clogb2(input integer bit_depth);
+        begin
+            for (clogb2 = 0; bit_depth > 0; clogb2 = clogb2 + 1)
+                bit_depth = bit_depth >> 1;
+        end
+    endfunction
+
+    // WAIT_COUNT_BITS 是等待计数器的位宽。
+    localparam integer WAIT_COUNT_BITS = clogb2(C_M_START_COUNT - 1);
+    // bit_num 给出了寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。
+    localparam bit_num = clogb2(NUMBER_OF_OUTPUT_WORDS);
+
+    // 定义状态机的状态
+    parameter [1:0] IDLE         = 2'b00, // 初始/空闲状态
+                    INIT_COUNTER = 2'b01, // 初始化计数器状态
+                    SEND_STREAM  = 2'b10; // 发送流数据状态
+
+
+    // 状态机变量
+    reg [1:0] mst_exec_state;
+    // 读指针 (用于生成输出数据)
+    reg [bit_num-1:0] read_pointer;
+    // 等待计数器。主设备在发起传输前会等待用户定义的时钟周期数。
+    reg [WAIT_COUNT_BITS-1 : 0] count;
+
+    // AXI Stream 内部信号
+    wire axis_tvalid;
+    wire axis_tlast;
+    wire tx_en;
+    wire tx_done;
+
+    //================================================================
+    // 端口连接与赋值 (I/O Connections assignments)
+    //================================================================
+    assign M_AXIS_TVALID = axis_tvalid;
+    assign M_AXIS_TDATA  = read_pointer; // 注意: 此处将读指针的值作为数据发送
+    assign M_AXIS_TLAST  = axis_tlast;
+    assign M_AXIS_TSTRB  = {(C_M_AXIS_TDATA_WIDTH/8){1'b1}}; // 所有字节选通始终有效
+
+    //================================================================
+    // 控制状态机实现 (Control state machine implementation)
+    //================================================================
+    always @(posedge M_AXIS_ACLK) begin
+        if (!M_AXIS_ARESETN) begin // 同步复位 (低电平有效)
+            mst_exec_state <= IDLE;
+            count          <= 0;
+        end else begin
+            case (mst_exec_state)
+                IDLE: begin
+                    mst_exec_state <= INIT_COUNTER;
+                end
+
+                INIT_COUNTER: begin
+                    // 等待直到计数器达到设定的起始计数值
+                    if (count == C_M_START_COUNT - 1) begin
+                        mst_exec_state <= SEND_STREAM;
+                    end else begin
+                        count          <= count + 1;
+                        mst_exec_state <= INIT_COUNTER;
+                    end
+                end
+
+                SEND_STREAM: begin
+                    // 如果传输完成，则返回空闲状态
+                    if (tx_done) begin
+                        mst_exec_state <= IDLE;
+                    end else begin
+                        mst_exec_state <= SEND_STREAM;
+                    end
+                end
+
+                default: begin
+                    mst_exec_state <= IDLE;
+                end
+            endcase
+        end
+    end
+
+
+    //产生 AXI Stream 信号
+    // 当状态机处于 SEND_STREAM 状态且尚未发送完所有数据字时，tvalid 置为有效。
+    assign axis_tvalid = (mst_exec_state == SEND_STREAM) && (read_pointer < NUMBER_OF_OUTPUT_WORDS);
+
+    // 当主设备和从设备都准备好进行传输时，tx_en 置为有效。
+    assign tx_en = M_AXIS_TREADY && axis_tvalid;
+
+    // 在传输数据包的最后一个字时，tlast 置为有效。
+    assign axis_tlast = (read_pointer == NUMBER_OF_OUTPUT_WORDS - 1) && tx_en;
+
+    // 当最后一次传输完成时，tx_done 置为有效。
+    assign tx_done = axis_tlast;
+
+    //================================================================
+    // 读指针逻辑 (用于生成流式输出数据)
+    //================================================================
+    always @(posedge M_AXIS_ACLK) begin
+        if (!M_AXIS_ARESETN) begin
+            read_pointer <= 0;
+        end else if (tx_en) begin
+            // 仅当一次传输发生时，读指针才增加
+            read_pointer <= read_pointer + 1;
+        end
+    end
+
+endmodule
+
+```
 
 
 

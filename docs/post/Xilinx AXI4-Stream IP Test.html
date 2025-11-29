@@ -63,12 +63,37 @@ endmodule
 
 ```
 
+> AXI Master替换代码
 
 
+```verilog
+`timescale 1 ns / 1 ps
 
+module maxis_v1_0_M00_AXIS #(
+    // 定义DATA位宽
+    parameter integer C_M_AXIS_TDATA_WIDTH = 32,
+    // 在 INIT_COUNTER 状态下 等待多长时间开始尝试第一次发送数据
+    parameter integer C_M_START_COUNT      = 32
+) (
+    // 时钟 复位
+    input wire M_AXIS_ACLK,
+    input wire M_AXIS_ARESETN,
 
+    // AXI-S信号
+    output wire M_AXIS_TVALID,
+    input wire M_AXIS_TREADY，
 
-。">
+    output wire [C_M_AXIS_TDATA_WIDTH-1 : 0] M_AXIS_TDATA,
+    output wire [(C_M_AXIS_TDATA_WIDTH/8)-1 : 0] M_AXIS_TSTRB,
+    output wire M_AXIS_TLAST
+    
+);
+
+    
+    // 内部定义常量   定义每次发送的数据包的长度
+    localparam NUMBER_OF_OUTPUT_WORDS = 8;
+
+    // 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。">
 <meta property="og:title" content="Xilinx AXI4-Stream IP Test">
 <meta property="og:description" content="> 添加 IP
 
@@ -123,12 +148,37 @@ endmodule
 
 ```
 
+> AXI Master替换代码
 
 
+```verilog
+`timescale 1 ns / 1 ps
 
+module maxis_v1_0_M00_AXIS #(
+    // 定义DATA位宽
+    parameter integer C_M_AXIS_TDATA_WIDTH = 32,
+    // 在 INIT_COUNTER 状态下 等待多长时间开始尝试第一次发送数据
+    parameter integer C_M_START_COUNT      = 32
+) (
+    // 时钟 复位
+    input wire M_AXIS_ACLK,
+    input wire M_AXIS_ARESETN,
 
+    // AXI-S信号
+    output wire M_AXIS_TVALID,
+    input wire M_AXIS_TREADY，
 
-。">
+    output wire [C_M_AXIS_TDATA_WIDTH-1 : 0] M_AXIS_TDATA,
+    output wire [(C_M_AXIS_TDATA_WIDTH/8)-1 : 0] M_AXIS_TSTRB,
+    output wire M_AXIS_TLAST
+    
+);
+
+    
+    // 内部定义常量   定义每次发送的数据包的长度
+    localparam NUMBER_OF_OUTPUT_WORDS = 8;
+
+    // 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://DFC1234.github.io/blog.github.io/post/Xilinx%20AXI4-Stream%20IP%20Test.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/137273209?v=4">
@@ -246,6 +296,142 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         m00_axis_aresetn_0 <span class="pl-k">=</span> <span class="pl-c1">1'b0</span>;                               <span class="pl-c"><span class="pl-c">//</span>仿真开始时，复位</span>
         <span class="pl-c1">#100</span>;                                                                     <span class="pl-c"><span class="pl-c">//</span>100个周期后，消除复位信号</span>
         m00_axis_aresetn_0 <span class="pl-k">=</span> <span class="pl-c1">1'b1</span>;
+    <span class="pl-k">end</span>
+
+<span class="pl-k">endmodule</span>
+</pre></div>
+<blockquote>
+<p>AXI Master替换代码</p>
+</blockquote>
+<div class="highlight highlight-source-verilog"><pre class="notranslate"><span class="pl-k">`timescale</span> <span class="pl-c1">1</span> ns <span class="pl-k">/</span> <span class="pl-c1">1</span> ps
+
+<span class="pl-k">module</span> <span class="pl-en">maxis_v1_0_M00_AXIS</span> #(
+    <span class="pl-c"><span class="pl-c">//</span> 定义DATA位宽</span>
+    <span class="pl-k">parameter</span> <span class="pl-k">integer</span> C_M_AXIS_TDATA_WIDTH <span class="pl-k">=</span> <span class="pl-c1">32</span>,
+    <span class="pl-c"><span class="pl-c">//</span> 在 INIT_COUNTER 状态下 等待多长时间开始尝试第一次发送数据</span>
+    <span class="pl-k">parameter</span> <span class="pl-k">integer</span> C_M_START_COUNT      <span class="pl-k">=</span> <span class="pl-c1">32</span>
+) (
+    <span class="pl-c"><span class="pl-c">//</span> 时钟 复位</span>
+    <span class="pl-k">input</span> <span class="pl-k">wire</span> M_AXIS_ACLK,
+    <span class="pl-k">input</span> <span class="pl-k">wire</span> M_AXIS_ARESETN,
+
+    <span class="pl-c"><span class="pl-c">//</span> AXI-S信号</span>
+    <span class="pl-k">output</span> <span class="pl-k">wire</span> M_AXIS_TVALID,
+    <span class="pl-k">input</span> <span class="pl-k">wire</span> M_AXIS_TREADY，
+
+    <span class="pl-k">output</span> <span class="pl-k">wire</span> [C_M_AXIS_TDATA_WIDTH<span class="pl-k">-</span><span class="pl-c1">1</span> : <span class="pl-c1">0</span>] M_AXIS_TDATA,
+    <span class="pl-k">output</span> <span class="pl-k">wire</span> [(C_M_AXIS_TDATA_WIDTH<span class="pl-k">/</span><span class="pl-c1">8</span>)<span class="pl-k">-</span><span class="pl-c1">1</span> : <span class="pl-c1">0</span>] M_AXIS_TSTRB,
+    <span class="pl-k">output</span> <span class="pl-k">wire</span> M_AXIS_TLAST
+    
+);
+
+    
+    <span class="pl-c"><span class="pl-c">//</span> 内部定义常量   定义每次发送的数据包的长度</span>
+    <span class="pl-k">localparam</span> NUMBER_OF_OUTPUT_WORDS <span class="pl-k">=</span> <span class="pl-c1">8</span>;
+
+    <span class="pl-c"><span class="pl-c">//</span> 名为 clogb2 的函数，返回一个整数，其值为以2为底的对数的向上取整。</span>
+    <span class="pl-k">function</span> <span class="pl-k">integer</span> clogb2(<span class="pl-k">input</span> <span class="pl-k">integer</span> bit_depth);
+        <span class="pl-k">begin</span>
+            <span class="pl-k">for</span> (clogb2 <span class="pl-k">=</span> <span class="pl-c1">0</span>; bit_depth <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>; clogb2 <span class="pl-k">=</span> clogb2 <span class="pl-k">+</span> <span class="pl-c1">1</span>)
+                bit_depth <span class="pl-k">=</span> bit_depth <span class="pl-k">&gt;&gt;</span> <span class="pl-c1">1</span>;
+        <span class="pl-k">end</span>
+    <span class="pl-k">endfunction</span>
+
+    <span class="pl-c"><span class="pl-c">//</span> WAIT_COUNT_BITS 是等待计数器的位宽。</span>
+    <span class="pl-k">localparam</span> <span class="pl-k">integer</span> WAIT_COUNT_BITS <span class="pl-k">=</span> clogb2(C_M_START_COUNT <span class="pl-k">-</span> <span class="pl-c1">1</span>);
+    <span class="pl-c"><span class="pl-c">//</span> bit_num 给出了寻址 NUMBER_OF_OUTPUT_WORDS 数量所需的最少位数。</span>
+    <span class="pl-k">localparam</span> bit_num <span class="pl-k">=</span> clogb2(NUMBER_OF_OUTPUT_WORDS);
+
+    <span class="pl-c"><span class="pl-c">//</span> 定义状态机的状态</span>
+    <span class="pl-k">parameter</span> [<span class="pl-c1">1</span>:<span class="pl-c1">0</span>] IDLE         <span class="pl-k">=</span> <span class="pl-c1">2'b00</span>, <span class="pl-c"><span class="pl-c">//</span> 初始/空闲状态</span>
+                    INIT_COUNTER <span class="pl-k">=</span> <span class="pl-c1">2'b01</span>, <span class="pl-c"><span class="pl-c">//</span> 初始化计数器状态</span>
+                    SEND_STREAM  <span class="pl-k">=</span> <span class="pl-c1">2'b10</span>; <span class="pl-c"><span class="pl-c">//</span> 发送流数据状态</span>
+
+
+    <span class="pl-c"><span class="pl-c">//</span> 状态机变量</span>
+    <span class="pl-k">reg</span> [<span class="pl-c1">1</span>:<span class="pl-c1">0</span>] mst_exec_state;
+    <span class="pl-c"><span class="pl-c">//</span> 读指针 (用于生成输出数据)</span>
+    <span class="pl-k">reg</span> [bit_num<span class="pl-k">-</span><span class="pl-c1">1</span>:<span class="pl-c1">0</span>] read_pointer;
+    <span class="pl-c"><span class="pl-c">//</span> 等待计数器。主设备在发起传输前会等待用户定义的时钟周期数。</span>
+    <span class="pl-k">reg</span> [WAIT_COUNT_BITS<span class="pl-k">-</span><span class="pl-c1">1</span> : <span class="pl-c1">0</span>] count;
+
+    <span class="pl-c"><span class="pl-c">//</span> AXI Stream 内部信号</span>
+    <span class="pl-k">wire</span> axis_tvalid;
+    <span class="pl-k">wire</span> axis_tlast;
+    <span class="pl-k">wire</span> tx_en;
+    <span class="pl-k">wire</span> tx_done;
+
+    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
+    <span class="pl-c"><span class="pl-c">//</span> 端口连接与赋值 (I/O Connections assignments)</span>
+    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
+    <span class="pl-k">assign</span> M_AXIS_TVALID <span class="pl-k">=</span> axis_tvalid;
+    <span class="pl-k">assign</span> M_AXIS_TDATA  <span class="pl-k">=</span> read_pointer; <span class="pl-c"><span class="pl-c">//</span> 注意: 此处将读指针的值作为数据发送</span>
+    <span class="pl-k">assign</span> M_AXIS_TLAST  <span class="pl-k">=</span> axis_tlast;
+    <span class="pl-k">assign</span> M_AXIS_TSTRB  <span class="pl-k">=</span> {(C_M_AXIS_TDATA_WIDTH<span class="pl-k">/</span><span class="pl-c1">8</span>){<span class="pl-c1">1'b1</span>}}; <span class="pl-c"><span class="pl-c">//</span> 所有字节选通始终有效</span>
+
+    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
+    <span class="pl-c"><span class="pl-c">//</span> 控制状态机实现 (Control state machine implementation)</span>
+    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
+    <span class="pl-k">always</span> @(<span class="pl-k">posedge</span> M_AXIS_ACLK) <span class="pl-k">begin</span>
+        <span class="pl-k">if</span> (<span class="pl-k">!</span>M_AXIS_ARESETN) <span class="pl-k">begin</span> <span class="pl-c"><span class="pl-c">//</span> 同步复位 (低电平有效)</span>
+            mst_exec_state <span class="pl-k">&lt;=</span> IDLE;
+            count          <span class="pl-k">&lt;=</span> <span class="pl-c1">0</span>;
+        <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">begin</span>
+            <span class="pl-k">case</span> (mst_exec_state)
+                IDLE: <span class="pl-k">begin</span>
+                    mst_exec_state <span class="pl-k">&lt;=</span> INIT_COUNTER;
+                <span class="pl-k">end</span>
+
+                INIT_COUNTER: <span class="pl-k">begin</span>
+                    <span class="pl-c"><span class="pl-c">//</span> 等待直到计数器达到设定的起始计数值</span>
+                    <span class="pl-k">if</span> (count <span class="pl-k">==</span> C_M_START_COUNT <span class="pl-k">-</span> <span class="pl-c1">1</span>) <span class="pl-k">begin</span>
+                        mst_exec_state <span class="pl-k">&lt;=</span> SEND_STREAM;
+                    <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">begin</span>
+                        count          <span class="pl-k">&lt;=</span> count <span class="pl-k">+</span> <span class="pl-c1">1</span>;
+                        mst_exec_state <span class="pl-k">&lt;=</span> INIT_COUNTER;
+                    <span class="pl-k">end</span>
+                <span class="pl-k">end</span>
+
+                SEND_STREAM: <span class="pl-k">begin</span>
+                    <span class="pl-c"><span class="pl-c">//</span> 如果传输完成，则返回空闲状态</span>
+                    <span class="pl-k">if</span> (tx_done) <span class="pl-k">begin</span>
+                        mst_exec_state <span class="pl-k">&lt;=</span> IDLE;
+                    <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">begin</span>
+                        mst_exec_state <span class="pl-k">&lt;=</span> SEND_STREAM;
+                    <span class="pl-k">end</span>
+                <span class="pl-k">end</span>
+
+                <span class="pl-k">default</span>: <span class="pl-k">begin</span>
+                    mst_exec_state <span class="pl-k">&lt;=</span> IDLE;
+                <span class="pl-k">end</span>
+            <span class="pl-k">endcase</span>
+        <span class="pl-k">end</span>
+    <span class="pl-k">end</span>
+
+
+    <span class="pl-c"><span class="pl-c">//</span>产生 AXI Stream 信号</span>
+    <span class="pl-c"><span class="pl-c">//</span> 当状态机处于 SEND_STREAM 状态且尚未发送完所有数据字时，tvalid 置为有效。</span>
+    <span class="pl-k">assign</span> axis_tvalid <span class="pl-k">=</span> (mst_exec_state <span class="pl-k">==</span> SEND_STREAM) <span class="pl-k">&amp;&amp;</span> (read_pointer <span class="pl-k">&lt;</span> NUMBER_OF_OUTPUT_WORDS);
+
+    <span class="pl-c"><span class="pl-c">//</span> 当主设备和从设备都准备好进行传输时，tx_en 置为有效。</span>
+    <span class="pl-k">assign</span> tx_en <span class="pl-k">=</span> M_AXIS_TREADY <span class="pl-k">&amp;&amp;</span> axis_tvalid;
+
+    <span class="pl-c"><span class="pl-c">//</span> 在传输数据包的最后一个字时，tlast 置为有效。</span>
+    <span class="pl-k">assign</span> axis_tlast <span class="pl-k">=</span> (read_pointer <span class="pl-k">==</span> NUMBER_OF_OUTPUT_WORDS <span class="pl-k">-</span> <span class="pl-c1">1</span>) <span class="pl-k">&amp;&amp;</span> tx_en;
+
+    <span class="pl-c"><span class="pl-c">//</span> 当最后一次传输完成时，tx_done 置为有效。</span>
+    <span class="pl-k">assign</span> tx_done <span class="pl-k">=</span> axis_tlast;
+
+    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
+    <span class="pl-c"><span class="pl-c">//</span> 读指针逻辑 (用于生成流式输出数据)</span>
+    <span class="pl-c"><span class="pl-c">//</span>================================================================</span>
+    <span class="pl-k">always</span> @(<span class="pl-k">posedge</span> M_AXIS_ACLK) <span class="pl-k">begin</span>
+        <span class="pl-k">if</span> (<span class="pl-k">!</span>M_AXIS_ARESETN) <span class="pl-k">begin</span>
+            read_pointer <span class="pl-k">&lt;=</span> <span class="pl-c1">0</span>;
+        <span class="pl-k">end</span> <span class="pl-k">else</span> <span class="pl-k">if</span> (tx_en) <span class="pl-k">begin</span>
+            <span class="pl-c"><span class="pl-c">//</span> 仅当一次传输发生时，读指针才增加</span>
+            read_pointer <span class="pl-k">&lt;=</span> read_pointer <span class="pl-k">+</span> <span class="pl-c1">1</span>;
+        <span class="pl-k">end</span>
     <span class="pl-k">end</span>
 
 <span class="pl-k">endmodule</span>
