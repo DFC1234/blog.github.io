@@ -1,54 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Sat, 29 Nov 2025 13:30:52 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>FDMA IP 读写 AXI-BRAM 详解</title><link>https://DFC1234.github.io/blog.github.io/post/FDMA%20IP%20-du-xie-%20AXI-BRAM%20-xiang-jie.html</link><description>&gt; 搭建BD工程
-
-&gt; 创建 Block Design
-
-&lt;img width='1064' height='445' alt='Image' src='https://github.com/user-attachments/assets/a5a64989-ff66-4831-99bc-554b10318c86' /&gt;
-
-&gt; 图形化BD 就是一个代码容器，接下来我们添加一些图形化的 IP
-
-&lt;img width='1056' height='430' alt='Image' src='https://github.com/user-attachments/assets/9ebb90ed-6f2c-4704-9ad3-32dc35c7dd66' /&gt;
-
-&lt;img width='1071' height='628' alt='Image' src='https://github.com/user-attachments/assets/e9db606a-cceb-47b1-83e0-e8def9f2dd8a' /&gt;
-
-&lt;img width='1061' height='259' alt='Image' src='https://github.com/user-attachments/assets/8db08f23-d289-4cfd-ab75-af8e1d9431d3' /&gt;
-
-&lt;img width='1081' height='275' alt='Image' src='https://github.com/user-attachments/assets/21e0755a-b2d2-48af-bb7f-cae8593cbcca' /&gt;
-
-&gt; IP 信号自动连线 可以自己删减
-
-&lt;!-- Failed to upload 'image.png' --&gt;
-
-&lt;img width='1074' height='304' alt='Image' src='https://github.com/user-attachments/assets/d812aeae-87b5-41b5-abdc-4da6cedf1734' /&gt;
-
-&gt; BRAM 参数设置
-
-FDMA 设置
-
-&lt;img width='1071' height='250' alt='Image' src='https://github.com/user-attachments/assets/e8b52137-b7b1-4847-9a0b-9500fadccdf3' /&gt;
-
-
-BRAM 设置
-
-&lt;img width='1059' height='571' alt='Image' src='https://github.com/user-attachments/assets/9371c32c-3694-4583-ae3d-de7df740890c' /&gt;
-
-&lt;img width='1063' height='564' alt='Image' src='https://github.com/user-attachments/assets/6a279802-c1ad-45a4-b9d6-65ed89f16d58' /&gt;
-
-&lt;img width='1067' height='561' alt='Image' src='https://github.com/user-attachments/assets/b91af88d-84fc-4773-aa64-78d3215c760c' /&gt;
-
-&lt;img width='1069' height='593' alt='Image' src='https://github.com/user-attachments/assets/88fc7fb7-1640-454a-91eb-f1590bfe1695' /&gt;
-
-AXI BRAM Controller IP 设置
-
-
-Clocking Wizard IP 设置
-
-
-
-
-
-
-。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/FDMA%20IP%20-du-xie-%20AXI-BRAM%20-xiang-jie.html</guid><pubDate>Sat, 29 Nov 2025 13:30:24 +0000</pubDate></item><item><title>FDMA IP 读写 AXI-BRAM 详解</title><link>https://DFC1234.github.io/blog.github.io/post/FDMA%20IP%20-du-xie-%20AXI-BRAM%20-xiang-jie.html</link><description>&gt; 搭建BD工程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Mon, 01 Dec 2025 16:17:12 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>FDMA IP 读写 AXI-BRAM 详解</title><link>https://DFC1234.github.io/blog.github.io/post/FDMA%20IP%20-du-xie-%20AXI-BRAM%20-xiang-jie.html</link><description>&gt; 搭建BD工程
 
 &gt; 创建 Block Design
 
