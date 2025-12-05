@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Mon, 01 Dec 2025 16:17:12 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>FDMA IP 读写 AXI-BRAM 详解</title><link>https://DFC1234.github.io/blog.github.io/post/FDMA%20IP%20-du-xie-%20AXI-BRAM%20-xiang-jie.html</link><description>&gt; 搭建BD工程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Gruidae'Blog</title><link>https://DFC1234.github.io/blog.github.io</link><description>Sharing cool stuff about communications, signal processing, instruments, and other fun topics.</description><copyright>Gruidae'Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/137273209?v=4</url><title>avatar</title><link>https://DFC1234.github.io/blog.github.io</link></image><lastBuildDate>Fri, 05 Dec 2025 06:50:47 +0000</lastBuildDate><managingEditor>Gruidae'Blog</managingEditor><ttl>60</ttl><webMaster>Gruidae'Blog</webMaster><item><title>XDMA</title><link>https://DFC1234.github.io/blog.github.io/post/XDMA.html</link><description># user 空间
+把设备内存直接映射到用户空间
+# uixdmairq  IP使用
+此ip配合xdma驱动处理中断
+
+此ip提供AXI-ilte接口 ，上位机通过访问user空间地址 ，读写IP的寄存器
+
+此ip输入一个user_irq_req_i信号 ，提供中断 ，输出到xdma ip 。</description><guid isPermaLink="true">https://DFC1234.github.io/blog.github.io/post/XDMA.html</guid><pubDate>Fri, 05 Dec 2025 06:50:20 +0000</pubDate></item><item><title>FDMA IP 读写 AXI-BRAM 详解</title><link>https://DFC1234.github.io/blog.github.io/post/FDMA%20IP%20-du-xie-%20AXI-BRAM%20-xiang-jie.html</link><description>&gt; 搭建BD工程
 
 &gt; 创建 Block Design
 
